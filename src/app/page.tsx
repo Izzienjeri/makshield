@@ -1,153 +1,175 @@
-import { FadeIn } from "@/components/animations/FadeIn";
-import { Shield, Target, Users, CheckCircle, ArrowRight, ArrowUpRight } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowUpRight, ArrowRight, Globe2, Scale, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import HeroSection from "@/features/home/HeroSection";
+
+const revealUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
+};
+
+const stagger = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <HeroSection />
+    <div className="flex flex-col min-h-screen bg-brand-white text-brand-navy selection:bg-brand-navy selection:text-white overflow-hidden">
+      
+      {/* 1. EDITORIAL HERO WITH SIDE LOGO */}
+      <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-12 lg:pb-24">
+        <div className="absolute inset-0 pointer-events-none flex justify-between px-6 lg:px-12 opacity-10">
+          <div className="w-px h-full bg-brand-navy"></div>
+          <div className="w-px h-full bg-brand-navy hidden md:block"></div>
+          <div className="w-px h-full bg-brand-navy hidden lg:block"></div>
+          <div className="w-px h-full bg-brand-navy hidden lg:block"></div>
+          <div className="w-px h-full bg-brand-navy"></div>
+        </div>
 
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="container relative z-10 mx-auto px-6 lg:px-12">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="grid grid-cols-1">
             
-            <FadeIn direction="right">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-grey-light text-brand-navy mb-6">
-                <span className="w-2 h-2 rounded-full bg-brand-navy" />
-                <span className="text-sm font-semibold tracking-wide uppercase">Who We Are</span>
-              </div>
-              
-              <h2 className="text-3xl lg:text-5xl font-bold text-brand-navy mb-6 text-balance leading-tight">
-                Uncompromising <br/>Client Advocacy.
-              </h2>
-              
-              <p className="text-brand-grey text-lg leading-relaxed mb-8 text-balance">
-                We exist to close the gap between client expectations and market delivery. From private individuals seeking personal protection to large corporations managing complex risk portfolios, we serve the full spectrum of the market with the same rigor and independence.
-              </p>
-              
-              <ul className="space-y-5 mb-10">
-                {[
-                  "Independent advice with zero insurer bias",
-                  "End-to-end claims advocacy until full settlement",
-                  "Clarity over complexity — no jargon, no ambiguity"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-brand-navy font-medium text-lg">
-                    <CheckCircle className="w-6 h-6 text-brand-navy-light shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Massive Statement */}
+            <div>
+              <motion.h1 variants={revealUp} className="text-[14vw] lg:text-[7.5rem] leading-[0.85] font-bold tracking-tighter text-brand-navy">
+                YOUR RISK.
+              </motion.h1>
+              <motion.h1 variants={revealUp} className="text-[14vw] lg:text-[7.5rem] leading-[0.85] font-bold tracking-tighter text-brand-grey mb-12">
+                OUR RESOLVE.
+              </motion.h1>
 
-              <Button asChild variant="outline" size="lg" className="h-12 px-6 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white transition-all group">
-                <Link href="/about">
-                  Read Our Story
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-            </FadeIn>
-            
-            <FadeIn direction="left" delay={0.2}>
-              <div className="relative h-125 lg:h-150 rounded-2xl overflow-hidden shadow-float group">
-                 <div className="w-full h-full bg-brand-grey-light flex flex-col items-center justify-center border border-brand-grey/20 relative z-0">
-                    <Shield className="w-20 h-20 text-brand-grey/30 mb-4" />
-                    <span className="text-brand-grey font-medium tracking-wider uppercase text-sm">Corporate Imagery Placeholder</span>
-                 </div>
-                 
-                 <div className="absolute inset-0 border-12 border-white/10 mix-blend-overlay rounded-2xl pointer-events-none z-10 transition-all duration-500 group-hover:border-8"></div>
-                 
-                 <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-soft border border-brand-grey-light z-20">
-                    <p className="text-brand-navy font-bold text-xl mb-1">Licensed & Regulated</p>
-                    <p className="text-brand-grey text-sm">Insurance Regulatory Authority of Kenya (IRA)</p>
-                 </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-brand-navy/20">
+                <motion.p variants={revealUp} className="text-xl lg:text-2xl font-light leading-relaxed text-balance">
+                  We do not simply arrange cover. We step forward when risk arrives, resolving what others leave unmanaged.
+                </motion.p>
+                <motion.div variants={revealUp} className="flex flex-col md:items-end justify-center">
+                  <Button asChild size="lg" className="bg-brand-navy text-white hover:bg-brand-grey h-14 px-8 rounded-none w-fit text-sm uppercase tracking-widest transition-all duration-500 shadow-float">
+                    <Link href="/contact" className="flex items-center gap-3">
+                      Engage Our Firm <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </motion.div>
               </div>
-            </FadeIn>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-24 bg-brand-grey-light">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-            <FadeIn>
-              <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy/5 text-brand-navy mb-6 border border-brand-navy/10">
-                  <span className="text-sm font-semibold tracking-wide uppercase">What We Do</span>
-                </div>
-                <h2 className="text-3xl lg:text-5xl font-bold text-brand-navy mb-6 leading-tight">
-                  Integrated Risk <br/>Solutions.
-                </h2>
-                <p className="text-brand-grey text-lg text-balance">
-                  A comprehensive suite of brokerage and risk advisory services across global and local markets. Driven purely by your needs.
-                </p>
-              </div>
-            </FadeIn>
+      {/* 2. PHILOSOPHY */}
+      <section className="bg-brand-navy text-brand-white py-32 lg:py-48 relative">
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-20%" }} variants={stagger}
+            className="max-w-5xl mx-auto"
+          >
+            <motion.p variants={revealUp} className="text-brand-grey text-sm uppercase tracking-[0.3em] mb-12 flex items-center gap-4">
+              <span className="w-12 h-px bg-brand-grey"></span> The Mak Shield Standard
+            </motion.p>
             
-            <FadeIn delay={0.2}>
-              <Link href="/services" className="inline-flex items-center gap-2 text-brand-navy font-semibold hover:text-brand-navy-light transition-colors group text-lg pb-1 border-b-2 border-transparent hover:border-brand-navy-light">
-                View All Services <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </Link>
-            </FadeIn>
+            <motion.h2 variants={revealUp} className="text-3xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-balance mb-16">
+              The insurance market is not short of options. What it lacks are true advisors who consistently prioritize the <span className="text-brand-grey italic font-serif">client over the commission</span>, and transparency over complexity.
+            </motion.h2>
+
+            <motion.div variants={revealUp} className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/20 pt-12">
+              {[
+                { title: "Independence", desc: "Zero insurer bias. Every recommendation is purely client-driven.", icon: <Scale className="w-6 h-6"/> },
+                { title: "Advocacy", desc: "We stay until claims are fully settled, not just submitted.", icon: <ShieldCheck className="w-6 h-6"/> },
+                { title: "Global Reach", desc: "Kenyan roots. International market access and capability.", icon: <Globe2 className="w-6 h-6"/> }
+              ].map((item, idx) => (
+                <div key={idx} className="group cursor-default">
+                  <div className="text-brand-grey mb-6 group-hover:text-white transition-colors duration-500">{item.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-brand-grey-light/70 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3. DIRECTORY */}
+      <section className="py-32 lg:py-40 bg-brand-white">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tighter">Core Expertise.</h2>
+            <p className="max-w-xs text-sm text-brand-grey uppercase tracking-widest font-semibold">
+              Integrated risk solutions across key risk classes.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="border-t-[1.5px] border-brand-navy">
             {[
-              {
-                title: "Risk Management & Advisory",
-                desc: "Detailed risk surveys, internal management frameworks, loss prevention strategies, and institutional reinsurance consulting.",
-                icon: <Target className="w-8 h-8" />
-              },
-              {
-                title: "Corporate & Commercial",
-                desc: "Bespoke packages to protect balance sheets and maintain business resilience, including business interruption and all-risks cover.",
-                icon: <Shield className="w-8 h-8" />
-              },
-              {
-                title: "Employee Benefits",
-                desc: "Group life, medical schemes, WIBA compliance, and wellness consulting to help you attract and retain top talent.",
-                icon: <Users className="w-8 h-8" />
-              }
+              { num: "01", title: "Corporate & Commercial", suffix: "Risk Placement" },
+              { num: "02", title: "Risk Management", suffix: "Advisory Services" },
+              { num: "03", title: "Employee Benefits", suffix: "Health & Wellness" },
+              { num: "04", title: "Claims Management", suffix: "End-to-End Advocacy" }
             ].map((service, idx) => (
-              <FadeIn key={idx} delay={0.1 + (idx * 0.1)} direction="up">
-                <div className="bg-white p-8 lg:p-10 rounded-2xl shadow-sm hover:shadow-soft transition-all duration-300 border border-brand-grey-light h-full flex flex-col group cursor-pointer relative overflow-hidden">
-                  
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-grey-light rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-150 opacity-50"></div>
+              <Link key={idx} href={`/services#${service.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}>
+                <motion.div 
+                  initial="hidden" whileInView="visible" viewport={{ once: true }}
+                  className="group flex flex-col md:flex-row items-start md:items-center justify-between py-10 lg:py-14 border-b border-brand-navy/20 hover:border-brand-navy transition-colors duration-500 cursor-pointer relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-brand-grey-light scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-500 ease-[0.16,1,0.3,1] -z-10"></div>
 
-                  <div className="w-16 h-16 bg-brand-navy rounded-xl flex items-center justify-center text-white mb-8 group-hover:-translate-y-2 transition-transform duration-300 shadow-md">
-                    {service.icon}
+                  <div className="flex items-baseline gap-6 md:gap-16">
+                    <span className="text-sm font-semibold text-brand-grey tracking-widest group-hover:text-brand-navy transition-colors">{service.num}</span>
+                    <h3 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-brand-navy group-hover:translate-x-4 transition-transform duration-500">
+                      {service.title}
+                    </h3>
                   </div>
-                  
-                  <h3 className="text-2xl font-bold text-brand-navy mb-4">{service.title}</h3>
-                  <p className="text-brand-grey text-base leading-relaxed grow mb-8">{service.desc}</p>
-                  
-                  <Link href={`/services#${service.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="text-brand-navy font-bold inline-flex items-center gap-2 mt-auto group/link">
-                    Explore Solutions <ArrowRight className="w-4 h-4 group-hover/link:translate-x-2 transition-transform" />
-                  </Link>
-                </div>
-              </FadeIn>
+
+                  <div className="flex items-center gap-8 mt-6 md:mt-0 opacity-0 md:opacity-100">
+                    <span className="text-sm uppercase tracking-[0.2em] text-brand-grey group-hover:text-brand-navy transition-colors">{service.suffix}</span>
+                    <div className="w-12 h-12 rounded-full border border-brand-navy/20 flex items-center justify-center group-hover:bg-brand-navy group-hover:text-white transition-all duration-500">
+                      <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-brand-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
-        <div className="container relative z-10 mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <FadeIn direction="up">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Ready to secure what matters most?
-              </h2>
-              <p className="text-xl text-brand-grey-light mb-10 max-w-2xl mx-auto font-light">
-                Whether you are an individual, a business ready for a fresh perspective, or an organization building something new, our team is ready to listen and ready to act.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild size="lg" className="w-full sm:w-auto bg-white text-brand-navy hover:bg-brand-grey-light h-14 px-10 text-lg font-semibold shadow-soft">
-                  <Link href="/contact">Request a Consultation</Link>
-                </Button>
+      {/* 4. ASYMMETRICAL IMAGE CTA */}
+      <section className="py-24 lg:py-32 bg-brand-grey-light">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12 items-center">
+            
+            <div className="lg:col-span-5 aspect-square lg:aspect-4/5 bg-brand-navy p-12 flex flex-col justify-between relative overflow-hidden text-white">
+              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+              <Image src="/images/black.png" alt="Mak Shield Mark" width={300} height={300} className="w-32 h-auto opacity-20 brightness-0 invert" />
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-brand-grey-light mb-4">The Promise</p>
+                <h3 className="text-2xl font-medium text-balance">We will tell the truth about cover, even when that truth is uncomfortable.</h3>
               </div>
-            </FadeIn>
+            </div>
+
+            <div className="lg:col-span-7 bg-white p-12 lg:p-24 -mt-10 lg:mt-0 lg:-ml-20 relative z-10 shadow-float border border-brand-grey/10">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+                <motion.h2 variants={revealUp} className="text-4xl lg:text-6xl font-bold tracking-tighter text-brand-navy mb-8">
+                  Not a transactional relationship. <br/>
+                  <span className="text-brand-grey">A lasting one.</span>
+                </motion.h2>
+                <motion.p variants={revealUp} className="text-lg text-brand-grey leading-relaxed mb-12 text-balance font-light">
+                  When you choose Mak Shield, you choose a partner that carries the responsibility of protecting your livelihoods, businesses, and investments every single day.
+                </motion.p>
+                <motion.div variants={revealUp}>
+                  <Button asChild size="lg" className="bg-brand-navy text-white hover:bg-brand-navy-light h-16 px-10 text-sm font-semibold uppercase tracking-widest rounded-none group transition-all duration-500">
+                    <Link href="/contact" className="flex items-center gap-4">
+                      Initiate Consultation 
+                      <span className="w-8 h-px bg-white group-hover:w-12 transition-all duration-500"></span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </div>
+
           </div>
         </div>
       </section>
