@@ -7,8 +7,8 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center bg-brand-navy overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('/images/nairobi-skyline.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
-      <div className="absolute inset-0 bg-linear-to-r from-brand-navy via-brand-navy/95 to-brand-navy/80" />
+      <div className="absolute inset-0 bg-[url('/images/hero1.png')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-linear-to-r from-brand-navy via-brand-navy/90 to-brand-navy/70" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 pt-20">
         <div className="max-w-3xl">

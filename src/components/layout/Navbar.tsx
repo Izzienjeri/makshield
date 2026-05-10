@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -18,29 +18,15 @@ const navLinks =[
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  },[]);
 
   useEffect(() => {
     closeMobileMenu();
   }, [pathname, closeMobileMenu]);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent",
-        scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-soft border-brand-grey-light py-4"
-          : "bg-transparent py-6 lg:py-8"
-      )}
-    >
+    <header className="fixed top-0 w-full z-50 bg-white border-b border-brand-grey-light shadow-soft py-4">
       <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
         
         <Link href="/" className="flex items-center group z-50">
