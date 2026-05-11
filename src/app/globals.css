@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #1B2A49;
-  --color-brand-navy-light: #2A3C60;
-  --color-brand-grey: #8B95A5;
-  --color-brand-grey-light: #F3F4F6;
-  --color-brand-white: #FFFFFF;
+  --color-brand-navy: #0F1A2A;
+  --color-brand-navy-light: #1A2E4B;
+  --color-brand-grey: #6E7D93;
+  --color-brand-grey-light: #E7EBF2;
+  --color-brand-white: #FCFCFF;
+  --color-brand-accent: #B28F4B;
 
-  --shadow-soft: 0 4px 40px -2px rgba(27, 42, 73, 0.08);
-  --shadow-float: 0 20px 40px -10px rgba(27, 42, 73, 0.15);
+  --shadow-soft: 0 6px 50px -5px rgba(15, 26, 42, 0.09);
+  --shadow-float: 0 25px 55px -15px rgba(15, 26, 42, 0.2);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), "Playfair Display", serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -26,24 +28,35 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #1B2A49;
-    --primary: #1B2A49;
+    --background: var(--color-brand-white);
+    --foreground: var(--color-brand-navy);
+    --primary: var(--color-brand-navy);
     --primary-foreground: #ffffff;
-    --border: #e2e8f0;
-    --input: #e2e8f0;
-    --ring: #1B2A49;
-    --radius: 0.5rem;
+    --border: var(--color-brand-grey-light);
+    --input: var(--color-brand-grey-light);
+    --ring: var(--color-brand-accent);
+    --radius: 0.75rem;
   }
 }
 
 @utility glass-panel {
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 @utility text-balance {
   text-wrap: balance;
+}
+
+@utility text-gradient-hero {
+  background-image: linear-gradient(to right, var(--color-brand-grey), var(--color-brand-grey-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* New utility class for radial gradient */
+@utility radial-gradient-to-at {
+  background-image: radial-gradient(at center center, var(--tw-gradient-stops));
 }
