@@ -1,11 +1,18 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ArrowRight, Shield, Scale, Briefcase, Award, Globe } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+
+const HERO_IMAGES = [
+  { src: "/images/hero12.png", position: "top" },
+  { src: "/images/hero16.png", position: "top" },
+  { src: "/images/hero17.png", position: "top" },
+  { src: "/images/hero3.png",  position: "top" },
+];
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 const transition = { duration: 1.4, ease };
@@ -41,6 +48,16 @@ export default function Home() {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
+  // Carousel State
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 6000); // Change image every 6 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div ref={containerRef} className="flex flex-col min-h-screen bg-brand-white text-brand-navy selection:bg-brand-navy selection:text-white overflow-hidden font-sans">
       
@@ -49,29 +66,46 @@ export default function Home() {
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-svh flex flex-col justify-end overflow-hidden bg-brand-navy pt-32 pb-16 lg:pb-24">
         
-        {/* Background Layer with Parallax & Slow Zoom */}
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="absolute inset-0 z-0">
-          <motion.div 
-            initial={{ scale: 1.1 }} 
-            animate={{ scale: 1 }} 
-            transition={{ duration: 20, ease: "easeOut" }} 
-            className="w-full h-full relative"
-          >
-            <Image
-              src="/images/hero10.png"
-              alt="Mak Shield Strategic Risk Advisory"
-              fill
-              priority
-              quality={100}
-              className="object-cover object-top"
-            />
-          </motion.div>
+        {/* Background Layer with Carousel & Parallax */}
+        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="absolute inset-0 z-0 bg-brand-navy">
           
-          {/* Depth Gradients - LIGHTENED FOR MAXIMUM CLARITY */}
+          <AnimatePresence mode="popLayout">
+            {HERO_IMAGES.map((img, index) => (
+              index === currentImageIndex && (
+                <motion.div
+                  key={img.src}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="absolute inset-0 z-0"
+                >
+                  <motion.div 
+                    initial={{ scale: 1.08 }} 
+                    animate={{ scale: 1 }} 
+                    transition={{ duration: 10, ease: "easeOut" }} 
+                    className="w-full h-full relative"
+                  >
+                    <Image
+                      src={img.src}
+                      alt={`Mak Shield Strategic Risk Advisory ${index + 1}`}
+                      fill
+                      priority={index === 0}
+                      quality={100}
+                      sizes="100vw"
+                      className={`object-cover object-${img.position}`}
+                    />
+                  </motion.div>
+                </motion.div>
+              )
+            ))}
+          </AnimatePresence>
+          
+          {/* Depth Gradients - Placed ABOVE the images (z-10) */}
           {/* Protects left side for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/20 to-transparent z-10 pointer-events-none"></div>
           {/* Protects bottom for text/CTA readability */}
-          <div className="absolute bottom-0 left-0 w-full h-[60vh] bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-[60vh] bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent z-10 pointer-events-none"></div>
         </motion.div>
 
         {/* Floating Animated Accent Orb */}
@@ -81,7 +115,7 @@ export default function Home() {
           className="absolute top-[10%] left-[0%] w-[50vw] h-[50vw] bg-brand-accent/15 rounded-full blur-[140px] pointer-events-none z-0 mix-blend-screen"
         />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-8 lg:pb-12 mt-20">
+        <div className="container relative z-20 mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-8 lg:pb-12 mt-20">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             
@@ -194,6 +228,22 @@ export default function Home() {
             className="w-[1.5px] h-12 bg-gradient-to-b from-brand-accent to-transparent rounded-full shadow-[0_0_10px_rgba(178,143,75,0.5)]"
           />
         </motion.div>
+
+        {/* Carousel Indicators (Bottom Right) */}
+        <div className="absolute bottom-10 right-6 md:right-12 z-20 flex gap-3">
+          {HERO_IMAGES.map((_, i) => (
+            <div key={i} className="w-10 h-[2px] bg-white/20 overflow-hidden rounded-full">
+              {i === currentImageIndex && (
+                <motion.div
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 6, ease: "linear" }}
+                  className="h-full bg-brand-accent shadow-[0_0_8px_rgba(178,143,75,0.8)]"
+                />
+              )}
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* --- REMAINDER OF PAGE SECTIONS --- */}
