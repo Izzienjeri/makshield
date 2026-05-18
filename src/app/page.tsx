@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 const HERO_IMAGES = [
   { src: "/images/hero12.png", position: "top" },
   { src: "/images/hero16.png", position: "top" },
-  { src: "/images/hero17.png", position: "top" },
+  { src: "/images/hero18.png", position: "top" },
   { src: "/images/hero3.png",  position: "top" },
 ];
 
