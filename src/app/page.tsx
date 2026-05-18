@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Shield, Scale, Briefcase, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Shield, Scale, Briefcase, Award, Globe } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -46,85 +46,154 @@ export default function Home() {
       
       <div className="fixed inset-0 z-50 opacity-[0.03] pointer-events-none mix-blend-multiply bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
-      <section className="relative h-screen min-h-200 flex flex-col justify-end overflow-hidden bg-brand-navy">
+      {/* --- HERO SECTION --- */}
+      <section className="relative min-h-svh flex flex-col justify-end overflow-hidden bg-brand-navy pt-32 pb-16 lg:pb-24">
         
+        {/* Background Layer with Parallax & Slow Zoom */}
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero4.jpg"
-            alt="Mak Shield Strategic Risk Advisory"
-            fill
-            priority
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+          <motion.div 
+            initial={{ scale: 1.1 }} 
+            animate={{ scale: 1 }} 
+            transition={{ duration: 20, ease: "easeOut" }} 
+            className="w-full h-full relative"
+          >
+            <Image
+              src="/images/hero4.jpg"
+              alt="Mak Shield Strategic Risk Advisory"
+              fill
+              priority
+              className="object-cover object-center"
+            />
+          </motion.div>
+          {/* Depth Gradients */}
+          <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-brand-navy/30"></div>
+          <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-linear-to-t from-brand-navy to-transparent"></div>
         </motion.div>
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-24">
-          
-          <div className="flex items-center gap-4 mb-6 overflow-hidden md:justify-end">
-            <MaskText delay={0.2} className="text-brand-grey text-[9px] uppercase tracking-[0.3em] font-semibold">
-              Independent Risk Advisory
-            </MaskText>
-            <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} transition={transition} className="h-px w-10 bg-brand-grey"></motion.div>
-          </div>
-          
-          <div className="flex flex-col mb-10 md:items-end">
-            <MaskText delay={0.3}>
-              <h1 className="text-[12vw] md:text-[8vw] lg:text-[7rem] font-bold text-white leading-[0.85] tracking-tighter drop-shadow-lg">
-                YOUR RISK.
-              </h1>
-            </MaskText>
-            <MaskText delay={0.4}>
-              <h1 className="text-[12vw] md:text-[8vw] lg:text-[7rem] font-bold text-transparent bg-clip-text bg-linear-to-r from-brand-grey to-brand-grey-light leading-[0.85] tracking-tighter mt-1">
-                OUR RESOLVE.
-              </h1>
-            </MaskText>
-          </div>
+        {/* Floating Animated Accent Orb */}
+        <motion.div
+          animate={{ x: [0, 80, -40, 0], y: [0, -80, 40, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[10%] left-[0%] w-[50vw] h-[50vw] bg-brand-accent/20 rounded-full blur-[140px] pointer-events-none z-0 mix-blend-screen"
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 border-t border-white/10 pt-10">
-            <div className="md:col-span-5 lg:col-span-4">
+        <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-8 lg:pb-12 mt-20">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            
+            {/* Left Side: Main Headline & CTA */}
+            <div className="lg:col-span-8 flex flex-col items-start">
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 1 }}
+                className="glass-panel inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 mb-8 shadow-soft"
+              >
+                <Award className="w-4 h-4 text-brand-accent" />
+                <span className="text-white text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold">
+                  Premier Independent Brokerage
+                </span>
+              </motion.div>
+
+              <div className="flex flex-col mb-8 relative">
+                <MaskText delay={0.3}>
+                  <h1 className="text-[14vw] md:text-[9vw] lg:text-[7.5rem] font-bold text-white leading-[0.85] tracking-tighter drop-shadow-2xl">
+                    YOUR RISK.
+                  </h1>
+                </MaskText>
+                <MaskText delay={0.4}>
+                  <div className="flex items-center gap-4 md:gap-8 mt-2">
+                    <motion.div
+                      initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 1, duration: 1.2, ease: "easeOut" }}
+                      className="hidden md:block h-0.5 bg-brand-accent"
+                    />
+                    <h1 className="text-[14vw] md:text-[9vw] lg:text-[7.5rem] font-serif italic font-light text-brand-accent leading-[0.85] tracking-tight pr-4">
+                      Our Resolve.
+                    </h1>
+                  </div>
+                </MaskText>
+              </div>
+
               <MaskText delay={0.5}>
-                <p className="text-brand-grey-light/80 text-base md:text-lg font-light leading-relaxed text-balance">
+                <p className="text-brand-grey-light/90 text-base md:text-lg lg:text-xl font-light leading-relaxed max-w-2xl text-balance border-l-2 border-white/10 pl-6 py-1">
                   We do not simply arrange cover. We step forward when risk arrives, architecting protection that secures lives, businesses, and investments.
                 </p>
               </MaskText>
-            </div>
-            
-            <div className="md:col-span-7 lg:col-span-8 flex flex-col md:items-end justify-between">
-              <motion.div 
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 1 }}
-                className="hidden md:flex gap-12 text-brand-grey text-[9px] uppercase tracking-[0.15em]"
-              >
-                <div>
-                  <p className="mb-1 opacity-50">Headquarters</p>
-                  <p className="text-white font-medium">Nairobi, Kenya</p>
-                </div>
-                <div>
-                  <p className="mb-1 opacity-50">Regulation</p>
-                  <p className="text-white font-medium">Licensed by IRA</p>
-                </div>
-              </motion.div>
 
-              <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 1 }}>
-                <Button asChild size="lg" className="bg-white text-brand-navy hover:bg-brand-grey-light h-14 px-8 rounded-none uppercase tracking-widest text-xs font-bold transition-all duration-500 shadow-float hover:shadow-2xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 1 }}
+                className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-10 w-full"
+              >
+                <Button asChild size="lg" className="bg-brand-accent hover:bg-white text-white hover:text-brand-navy h-14 px-8 rounded-sm uppercase tracking-widest text-xs font-bold transition-all duration-500 shadow-[0_0_30px_-5px_rgba(178,143,75,0.4)] hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.6)] border border-brand-accent hover:border-white">
                   <Link href="/contact" className="flex items-center gap-3">
-                    Engage Our Firm <ArrowUpRight className="w-3 h-3" />
+                    Engage Our Firm <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </Button>
+
+                <div className="hidden sm:flex gap-8 text-[9px] uppercase tracking-[0.2em]">
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-brand-grey font-semibold">Headquarters</span>
+                    <span className="text-white/95 tracking-widest">Nairobi, Kenya</span>
+                  </div>
+                  <div className="w-px h-8 bg-white/15"></div>
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-brand-grey font-semibold">Regulation</span>
+                    <span className="text-white/95 tracking-widest">Licensed by IRA</span>
+                  </div>
+                </div>
               </motion.div>
             </div>
+
+            {/* Right Side: Floating Glass Panel Card */}
+            <div className="hidden lg:flex lg:col-span-4 flex-col items-end pb-2 relative">
+               <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1, duration: 1.2, ease }}
+                whileHover={{ y: -8, transition: { duration: 0.4 } }}
+                className="glass-panel p-8 rounded-2xl w-full max-w-90 border border-white/10 shadow-float relative overflow-hidden group cursor-default backdrop-blur-2xl"
+               >
+                  {/* Card inner glow */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/20 rounded-full blur-3xl group-hover:bg-brand-accent/35 transition-colors duration-700"></div>
+
+                  <div className="w-12 h-12 rounded-full bg-brand-navy border border-white/10 flex items-center justify-center mb-6 relative z-10 shadow-lg">
+                    <Globe className="w-5 h-5 text-brand-accent" />
+                  </div>
+                  
+                  <h3 className="text-white font-serif italic text-2xl mb-3 relative z-10">Cross-Border Reach</h3>
+                  <p className="text-brand-grey-light/75 text-sm leading-relaxed relative z-10 font-light">
+                    Seamlessly managing complex risk portfolios for multinational operations across the East African landscape and beyond.
+                  </p>
+
+                  <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between relative z-10">
+                    <span className="text-[10px] text-brand-grey uppercase tracking-widest font-semibold">Explore Advisory</span>
+                    <Link href="/services#risk-advisory" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-white text-white transition-all duration-300">
+                      <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+                    </Link>
+                  </div>
+               </motion.div>
+            </div>
+
           </div>
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-50"
+        {/* Sophisticated Animated Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-70 z-20"
         >
-          <span className="text-white text-[8px] uppercase tracking-[0.3em]">Scroll</span>
-          <ChevronDown className="w-3 h-3 text-white animate-bounce" />
+          <span className="text-white text-[9px] uppercase tracking-[0.3em] font-semibold">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 10, 0], opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-[1.5px] h-12 bg-linear-to-b from-brand-accent to-transparent rounded-full"
+          />
         </motion.div>
       </section>
 
+      {/* --- REMAINDER OF PAGE SECTIONS --- */}
       <section className="relative bg-brand-white py-32 overflow-hidden">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-brand-grey-light rounded-full blur-[90px] -translate-y-1/2 translate-x-1/3 opacity-40 z-0"></div>
 
@@ -191,7 +260,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-white/3 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-700 ease-[0.16,1,0.3,1] -z-10"></div>
 
                   <div className="flex items-baseline gap-6 md:gap-16 relative z-10">
-                    <span className="text-xs font-mono text-brand-grey group-hover:text-white transition-colors">{service.num}</span>
+                    <span className="text-xs font-mono text-brand-grey group-hover:text-brand-accent transition-colors">{service.num}</span>
                     <h3 className="text-2xl md:text-4xl lg:text-5xl font-medium tracking-tighter group-hover:translate-x-4 transition-transform duration-700 ease-[0.16,1,0.3,1]">
                       {service.title}
                     </h3>
@@ -199,7 +268,7 @@ export default function Home() {
 
                   <div className="flex items-center gap-10 mt-5 md:mt-0 opacity-0 md:opacity-100 relative z-10">
                     <span className="text-[9px] uppercase tracking-[0.2em] text-brand-grey group-hover:text-white transition-colors">{service.meta}</span>
-                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-brand-navy transition-all duration-700">
+                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent group-hover:text-white transition-all duration-700">
                       <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
                     </div>
                   </div>
@@ -225,7 +294,7 @@ export default function Home() {
               <Image src="/images/black.png" alt="Mak Shield Mark" width={300} height={300} className="w-40 h-auto opacity-10 brightness-0 invert absolute -bottom-8 -right-8" />
               
               <div className="relative z-10">
-                <div className="w-6 h-0.5 bg-brand-grey mb-6"></div>
+                <div className="w-6 h-0.5 bg-brand-accent mb-6"></div>
                 <h3 className="text-2xl font-light leading-snug tracking-tight text-balance">
                   &ldquo;When risk arrives, <br/>we step forward.&rdquo;
                 </h3>
@@ -242,7 +311,7 @@ export default function Home() {
               <MaskText>
                 <h2 className="text-3xl lg:text-5xl font-bold tracking-tighter text-brand-navy mb-6 leading-[1.1]">
                   Not a transactional relationship. <br/>
-                  <span className="text-brand-grey font-serif italic font-light">A lasting one.</span>
+                  <span className="text-brand-accent font-serif italic font-light">A lasting one.</span>
                 </h2>
               </MaskText>
               
@@ -253,7 +322,7 @@ export default function Home() {
               </MaskText>
 
               <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}>
-                <Button asChild size="lg" className="bg-brand-navy text-white hover:bg-brand-navy-light h-14 px-8 text-[10px] font-semibold uppercase tracking-[0.15em] rounded-none group transition-all duration-500">
+                <Button asChild size="lg" className="bg-brand-navy text-white hover:bg-brand-accent h-14 px-8 text-[10px] font-semibold uppercase tracking-[0.15em] rounded-none group transition-all duration-500 shadow-soft">
                   <Link href="/contact" className="flex items-center gap-3">
                     Initiate Consultation 
                     <span className="w-6 h-px bg-white/50 group-hover:w-12 group-hover:bg-white transition-all duration-700 ease-out"></span>
