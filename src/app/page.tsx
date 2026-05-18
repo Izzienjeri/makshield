@@ -58,24 +58,27 @@ export default function Home() {
             className="w-full h-full relative"
           >
             <Image
-              src="/images/hero4.jpg"
+              src="/images/hero10.png"
               alt="Mak Shield Strategic Risk Advisory"
               fill
               priority
-              className="object-cover object-center"
+              quality={100}
+              className="object-cover object-top"
             />
           </motion.div>
-          {/* Depth Gradients */}
-          <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/70 to-transparent"></div>
-          <div className="absolute inset-0 bg-brand-navy/30"></div>
-          <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-linear-to-t from-brand-navy to-transparent"></div>
+          
+          {/* Depth Gradients - LIGHTENED FOR MAXIMUM CLARITY */}
+          {/* Protects left side for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/20 to-transparent"></div>
+          {/* Protects bottom for text/CTA readability */}
+          <div className="absolute bottom-0 left-0 w-full h-[60vh] bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent"></div>
         </motion.div>
 
         {/* Floating Animated Accent Orb */}
         <motion.div
           animate={{ x: [0, 80, -40, 0], y: [0, -80, 40, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[10%] left-[0%] w-[50vw] h-[50vw] bg-brand-accent/20 rounded-full blur-[140px] pointer-events-none z-0 mix-blend-screen"
+          className="absolute top-[10%] left-[0%] w-[50vw] h-[50vw] bg-brand-accent/15 rounded-full blur-[140px] pointer-events-none z-0 mix-blend-screen"
         />
 
         <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-8 lg:pb-12 mt-20">
@@ -89,7 +92,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 1 }}
-                className="glass-panel inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 mb-8 shadow-soft"
+                className="glass-panel inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 mb-8 shadow-soft backdrop-blur-md"
               >
                 <Award className="w-4 h-4 text-brand-accent" />
                 <span className="text-white text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold">
@@ -107,9 +110,9 @@ export default function Home() {
                   <div className="flex items-center gap-4 md:gap-8 mt-2">
                     <motion.div
                       initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 1, duration: 1.2, ease: "easeOut" }}
-                      className="hidden md:block h-0.5 bg-brand-accent"
+                      className="hidden md:block h-0.5 bg-brand-accent shadow-[0_0_10px_rgba(178,143,75,0.8)]"
                     />
-                    <h1 className="text-[14vw] md:text-[9vw] lg:text-[7.5rem] font-serif italic font-light text-brand-accent leading-[0.85] tracking-tight pr-4">
+                    <h1 className="text-[14vw] md:text-[9vw] lg:text-[7.5rem] font-serif italic font-light text-brand-accent leading-[0.85] tracking-tight pr-4 drop-shadow-lg">
                       Our Resolve.
                     </h1>
                   </div>
@@ -117,7 +120,7 @@ export default function Home() {
               </div>
 
               <MaskText delay={0.5}>
-                <p className="text-brand-grey-light/90 text-base md:text-lg lg:text-xl font-light leading-relaxed max-w-2xl text-balance border-l-2 border-white/10 pl-6 py-1">
+                <p className="text-brand-grey-light/95 text-base md:text-lg lg:text-xl font-light leading-relaxed max-w-2xl text-balance border-l-2 border-brand-accent/50 pl-6 py-1 drop-shadow-md">
                   We do not simply arrange cover. We step forward when risk arrives, architecting protection that secures lives, businesses, and investments.
                 </p>
               </MaskText>
@@ -132,14 +135,14 @@ export default function Home() {
                   </Link>
                 </Button>
 
-                <div className="hidden sm:flex gap-8 text-[9px] uppercase tracking-[0.2em]">
+                <div className="hidden sm:flex gap-8 text-[9px] uppercase tracking-[0.2em] drop-shadow-md">
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-brand-grey font-semibold">Headquarters</span>
+                    <span className="text-brand-accent font-semibold">Headquarters</span>
                     <span className="text-white/95 tracking-widest">Nairobi, Kenya</span>
                   </div>
-                  <div className="w-px h-8 bg-white/15"></div>
+                  <div className="w-px h-8 bg-white/20"></div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-brand-grey font-semibold">Regulation</span>
+                    <span className="text-brand-accent font-semibold">Regulation</span>
                     <span className="text-white/95 tracking-widest">Licensed by IRA</span>
                   </div>
                 </div>
@@ -153,23 +156,23 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, duration: 1.2, ease }}
                 whileHover={{ y: -8, transition: { duration: 0.4 } }}
-                className="glass-panel p-8 rounded-2xl w-full max-w-90 border border-white/10 shadow-float relative overflow-hidden group cursor-default backdrop-blur-2xl"
+                className="glass-panel p-8 rounded-2xl w-full max-w-90 border border-white/10 shadow-float relative overflow-hidden group cursor-default backdrop-blur-2xl bg-brand-navy/20"
                >
                   {/* Card inner glow */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/20 rounded-full blur-3xl group-hover:bg-brand-accent/35 transition-colors duration-700"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/20 rounded-full blur-3xl group-hover:bg-brand-accent/40 transition-colors duration-700"></div>
 
-                  <div className="w-12 h-12 rounded-full bg-brand-navy border border-white/10 flex items-center justify-center mb-6 relative z-10 shadow-lg">
+                  <div className="w-12 h-12 rounded-full bg-brand-navy border border-white/20 flex items-center justify-center mb-6 relative z-10 shadow-lg">
                     <Globe className="w-5 h-5 text-brand-accent" />
                   </div>
                   
-                  <h3 className="text-white font-serif italic text-2xl mb-3 relative z-10">Cross-Border Reach</h3>
-                  <p className="text-brand-grey-light/75 text-sm leading-relaxed relative z-10 font-light">
+                  <h3 className="text-white font-serif italic text-2xl mb-3 relative z-10 drop-shadow-md">Cross-Border Reach</h3>
+                  <p className="text-brand-grey-light/85 text-sm leading-relaxed relative z-10 font-light">
                     Seamlessly managing complex risk portfolios for multinational operations across the East African landscape and beyond.
                   </p>
 
-                  <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between relative z-10">
-                    <span className="text-[10px] text-brand-grey uppercase tracking-widest font-semibold">Explore Advisory</span>
-                    <Link href="/services#risk-advisory" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-white text-white transition-all duration-300">
+                  <div className="mt-8 pt-6 border-t border-white/15 flex items-center justify-between relative z-10">
+                    <span className="text-[10px] text-white/80 uppercase tracking-widest font-semibold">Explore Advisory</span>
+                    <Link href="/services#risk-advisory" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white text-white transition-all duration-300">
                       <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
                     </Link>
                   </div>
@@ -182,13 +185,13 @@ export default function Home() {
         {/* Sophisticated Animated Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-70 z-20"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-80 z-20"
         >
-          <span className="text-white text-[9px] uppercase tracking-[0.3em] font-semibold">Scroll</span>
+          <span className="text-white text-[9px] uppercase tracking-[0.3em] font-semibold drop-shadow-md">Scroll</span>
           <motion.div
-            animate={{ y: [0, 10, 0], opacity: [0.3, 1, 0.3] }}
+            animate={{ y: [0, 10, 0], opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[1.5px] h-12 bg-linear-to-b from-brand-accent to-transparent rounded-full"
+            className="w-[1.5px] h-12 bg-gradient-to-b from-brand-accent to-transparent rounded-full shadow-[0_0_10px_rgba(178,143,75,0.5)]"
           />
         </motion.div>
       </section>
