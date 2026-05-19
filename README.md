@@ -20,7 +20,7 @@ You can start editing the page by modifying aaaaaaaaaaaaaaa``app/page.tsx`. The 
 
 This project uses [`next/font`](https://neorg/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Learn M
 
 To learn more about Next.js, take a look at the following resources:
 
