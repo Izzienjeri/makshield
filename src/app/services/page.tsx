@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { cn } from "@/lib/utils";
 import { Briefcase, Shield, Users, Activity, Check } from "lucide-react";
 
 const services = [
@@ -10,6 +11,7 @@ const services = [
     icon: <Activity className="w-8 h-8 text-brand-accent" />,
     title: "Risk Advisory",
     description: "Structuring, negotiating, and placing solutions across global and local markets.",
+    image: "/images/risk.png",
     features: [
       "Risk assessments and profiling",
       "Risk registers and documentation",
@@ -23,6 +25,7 @@ const services = [
     icon: <Briefcase className="w-8 h-8 text-brand-accent" />,
     title: "Insurance Placement",
     description: "Unbiased market access and placement across all major risk classes.",
+    image: "/images/insurance.png",
     features: [
       "Medical & Health Insurance",
       "Motor & Fleet Insurance",
@@ -39,6 +42,7 @@ const services = [
     icon: <Users className="w-8 h-8 text-brand-accent" />,
     title: "Employee Benefits",
     description: "Comprehensive solutions to protect and retain your human capital.",
+    image: "/images/employee.png",
     features: [
       "Group Life Cover",
       "Group Medical Schemes",
@@ -52,6 +56,7 @@ const services = [
     icon: <Shield className="w-8 h-8 text-brand-accent" />,
     title: "Claims Management",
     description: "End-to-end advocacy. We do not simply arrange cover; we stand by you when risk arrives.",
+    image: "/images/claim.png",
     features: [
       "End-to-end claims advocacy from first notification to settlement",
       "Documentation preparation and submission",
@@ -104,31 +109,63 @@ export default function ServicesPage() {
             </FadeIn>
           </div>
 
-          <div className="space-y-12 lg:space-y-24">
-            {services.map((service) => (
+          <div className="space-y-24 lg:space-y-36">
+            {services.map((service, index) => (
               <div key={service.id} id={service.id} className="scroll-mt-32">
                 <FadeIn delay={0.1}>
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start bg-brand-grey-light/30 p-8 md:p-12 border border-brand-grey-light shadow-soft rounded-sm hover:shadow-float transition-all duration-500">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                     
-                    <div className="lg:col-span-4 flex flex-col items-start">
-                      <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center mb-6 shadow-md">
-                        {service.icon}
+                    {/* Asymmetrical Image Container */}
+                    <div className={cn(
+                      "lg:col-span-5 relative w-full aspect-[5/4] max-w-[550px] mx-auto flex items-center justify-center",
+                      index % 2 === 1 ? "lg:order-last" : ""
+                    )}>
+                      {/* Glow effect behind the image */}
+                      <div 
+                        className="absolute inset-0 bg-brand-accent/20 blur-[80px] transform scale-90 -z-10"
+                        style={{ borderRadius: index % 2 === 0 ? '32px 96px 32px 96px' : '96px 32px 96px 32px' }}
+                      ></div>
+                      
+                      <div 
+                        className="relative w-full h-full overflow-hidden shadow-float border-[8px] border-white bg-brand-grey-light/50"
+                        style={{ borderRadius: index % 2 === 0 ? '32px 96px 32px 96px' : '96px 32px 96px 32px' }}
+                      >
+                        <Image 
+                          src={service.image} 
+                          alt={service.title} 
+                          fill 
+                          className="object-cover hover:scale-105 transition-transform duration-700" 
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        <div className="absolute inset-0 bg-brand-navy/5 pointer-events-none mix-blend-overlay"></div>
                       </div>
-                      <h3 className="text-3xl font-bold text-brand-navy tracking-tighter mb-4">{service.title}</h3>
-                      <p className="text-brand-grey leading-relaxed">{service.description}</p>
                     </div>
 
-                    <div className="lg:col-span-8 lg:border-l border-brand-grey/20 lg:pl-16">
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                        {service.features.map((feature, fIdx) => (
-                          <li key={fIdx} className="flex items-start gap-4">
-                            <div className="mt-1 w-5 h-5 rounded-full bg-brand-accent/10 flex items-center justify-center shrink-0">
-                              <Check className="w-3 h-3 text-brand-accent" />
-                            </div>
-                            <span className="text-brand-navy font-medium leading-snug">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    {/* Text & Features Card */}
+                    <div className={cn(
+                      "lg:col-span-7 bg-brand-grey-light/30 p-8 md:p-12 border border-brand-grey-light shadow-soft rounded-sm hover:shadow-float transition-all duration-500",
+                      index % 2 === 1 ? "lg:order-first" : ""
+                    )}>
+                      <div className="flex flex-col items-start mb-10">
+                        <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center mb-6 shadow-md">
+                          {service.icon}
+                        </div>
+                        <h3 className="text-3xl font-bold text-brand-navy tracking-tighter mb-4">{service.title}</h3>
+                        <p className="text-brand-grey leading-relaxed text-lg">{service.description}</p>
+                      </div>
+
+                      <div className="pt-8 border-t border-brand-grey/20">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                          {service.features.map((feature, fIdx) => (
+                            <li key={fIdx} className="flex items-start gap-4">
+                              <div className="mt-1 w-5 h-5 rounded-full bg-brand-accent/10 flex items-center justify-center shrink-0">
+                                <Check className="w-3 h-3 text-brand-accent" />
+                              </div>
+                              <span className="text-brand-navy font-medium leading-snug">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                     
                   </div>
