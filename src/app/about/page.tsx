@@ -65,8 +65,11 @@ export default function AboutPage() {
             </FadeIn>
             
             <FadeIn direction="left">
-              <div className="relative aspect-square md:aspect-[4/3] rounded-sm overflow-hidden shadow-float">
-                <Image src="https://placehold.co/1200x900/E7EBF2/0F1A2A?text=Corporate+Overview" alt="Corporate Overview" fill className="object-cover" />
+              <div className="relative aspect-[5/4] max-w-[550px] mx-auto flex items-center justify-center">
+                <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] transform scale-90 -z-10" style={{ borderRadius: '32px 96px 32px 96px' }}></div>
+                <div className="relative w-full h-full overflow-hidden shadow-float border-[8px] border-white bg-white" style={{ borderRadius: '32px 96px 32px 96px' }}>
+                <Image src="/images/black.png" alt="Mak Shield Logo" fill className="object-contain p-8" />
+                </div>
               </div>
             </FadeIn>
           </div>
