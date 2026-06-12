@@ -25,7 +25,7 @@ const services = [
     icon: <Briefcase className="w-8 h-8 text-brand-accent" />,
     title: "Insurance Placement",
     description: "Unbiased market access and placement across all major risk classes.",
-    image: "/images/insurance2.png",
+    image: "/images/insurance 1.png",
     features: [
       "Medical & Health Insurance",
       "Motor & Fleet Insurance",
