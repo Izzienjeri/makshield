@@ -68,7 +68,17 @@ export default function AboutPage() {
               <div className="relative aspect-[5/4] max-w-[550px] mx-auto flex items-center justify-center">
                 <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] transform scale-90 -z-10" style={{ borderRadius: '32px 96px 32px 96px' }}></div>
                 <div className="relative w-full h-full overflow-hidden shadow-float border-[8px] border-white bg-white" style={{ borderRadius: '32px 96px 32px 96px' }}>
-                <Image src="/images/black.png" alt="Mak Shield Logo" fill className="object-contain p-8" />
+                  <Image src="/images/black.png" alt="Mak Shield Logo" fill className="object-contain p-8" />
+                </div>
+
+                {/* Floating stat cards */}
+                <div className="absolute -bottom-6 -left-6 bg-brand-navy text-white px-5 py-4 shadow-float rounded-sm z-10">
+                  <p className="text-2xl font-bold text-brand-accent">15+</p>
+                  <p className="text-[11px] uppercase tracking-widest text-white/60 mt-0.5">Years of Experience</p>
+                </div>
+                <div className="absolute -top-6 -right-6 bg-white border border-brand-grey-light text-brand-navy px-5 py-4 shadow-float rounded-sm z-10">
+                  <p className="text-2xl font-bold text-brand-navy">500+</p>
+                  <p className="text-[11px] uppercase tracking-widest text-brand-grey mt-0.5">Clients Protected</p>
                 </div>
               </div>
             </FadeIn>
