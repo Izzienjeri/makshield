@@ -11,7 +11,7 @@ const services = [
     icon: <Activity className="w-8 h-8 text-brand-accent" />,
     title: "Risk Advisory",
     description: "Structuring, negotiating, and placing solutions across global and local markets.",
-    image: "/images/risk.png",
+    image: "/images/risk2.png",
     features: [
       "Risk assessments and profiling",
       "Risk registers and documentation",
@@ -25,7 +25,7 @@ const services = [
     icon: <Briefcase className="w-8 h-8 text-brand-accent" />,
     title: "Insurance Placement",
     description: "Unbiased market access and placement across all major risk classes.",
-    image: "/images/insurance.png",
+    image: "/images/insurance2.png",
     features: [
       "Medical & Health Insurance",
       "Motor & Fleet Insurance",
@@ -42,7 +42,7 @@ const services = [
     icon: <Users className="w-8 h-8 text-brand-accent" />,
     title: "Employee Benefits",
     description: "Comprehensive solutions to protect and retain your human capital.",
-    image: "/images/employee.png",
+    image: "/images/employee2.png",
     features: [
       "Group Life Cover",
       "Group Medical Schemes",
@@ -56,7 +56,7 @@ const services = [
     icon: <Shield className="w-8 h-8 text-brand-accent" />,
     title: "Claims Management",
     description: "End-to-end advocacy. We do not simply arrange cover; we stand by you when risk arrives.",
-    image: "/images/claim.png",
+    image: "/images/claim2.png",
     features: [
       "End-to-end claims advocacy from first notification to settlement",
       "Documentation preparation and submission",
