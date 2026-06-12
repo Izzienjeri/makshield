@@ -21,8 +21,8 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="https://placehold.co/1920x1080/0F1A2A/B28F4B?text=About+Mak+Shield" alt="About Mak Shield" fill className="object-cover opacity-30" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"></div>
+          <Image src="/images/storyhero.png" alt="About Mak Shield" fill className="object-cover opacity-30" priority />
+
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12">
