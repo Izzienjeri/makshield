@@ -20,7 +20,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 
 ## Deploy on Vercel
