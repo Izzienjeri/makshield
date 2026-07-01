@@ -29,6 +29,7 @@ export function Footer() {
             <ul className="space-y-6 text-brand-grey-light/95 text-base">
               <li><Link href="/about" className="hover:text-brand-accent transition-colors flex items-center gap-4 group"><ArrowRight className="w-3.5 h-3.5 text-brand-grey group-hover:text-brand-accent transition-colors"/> About Us</Link></li>
               <li><Link href="/services" className="hover:text-brand-accent transition-colors flex items-center gap-4 group"><ArrowRight className="w-3.5 h-3.5 text-brand-grey group-hover:text-brand-accent transition-colors"/> Our Services</Link></li>
+              <li><Link href="/why-mak-shield" className="hover:text-brand-accent transition-colors flex items-center gap-4 group"><ArrowRight className="w-3.5 h-3.5 text-brand-grey group-hover:text-brand-accent transition-colors"/> Why Mak Shield</Link></li>
               <li><Link href="/contact" className="hover:text-brand-accent transition-colors flex items-center gap-4 group"><ArrowRight className="w-3.5 h-3.5 text-brand-grey group-hover:text-brand-accent transition-colors"/> Contact Us</Link></li>
             </ul>
           </div>
