@@ -35,14 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm uppercase tracking-[0.22em] font-semibold text-brand-grey mb-10">Expertise</h4>
-            <ul className="space-y-6 text-brand-grey-light/95 text-base">
-              <li><Link href="/services#corporate" className="hover:text-brand-accent transition-colors">Corporate &amp; Commercial</Link></li>
-              <li><Link href="/services#medical" className="hover:text-brand-accent transition-colors">Medical &amp; Health</Link></li>
-              <li><Link href="/services#employee-benefits" className="hover:text-brand-accent transition-colors">Employee Benefits</Link></li>
-              <li><Link href="/services#risk-advisory" className="hover:text-brand-accent transition-colors">Risk Advisory</Link></li>
-            </ul>
-          </div>
+            
 
           <div>
             <h4 className="text-sm uppercase tracking-[0.22em] font-semibold text-brand-grey mb-10">Get in Touch</h4>
