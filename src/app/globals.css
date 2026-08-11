@@ -7,6 +7,11 @@
   --color-brand-grey-light: #E7EBF2;
   --color-brand-white: #FCFCFF;
   --color-brand-accent: #B28F4B;
+  --color-brand-gold: #D7B56D;
+  --color-brand-copper: #9A6B32;
+  --color-brand-ivory: #F7F4EC;
+  --color-brand-sand: #E9E3D6;
+  --color-brand-slate: #5D6874;
 
   --shadow-soft: 0 6px 50px -5px rgba(15, 26, 42, 0.09);
   --shadow-float: 0 25px 55px -15px rgba(15, 26, 42, 0.2);
@@ -36,6 +41,102 @@
     --input: var(--color-brand-grey-light);
     --ring: var(--color-brand-accent);
     --radius: 0.75rem;
+  }
+
+  * {
+    border-color: rgba(15, 26, 42, 0.14);
+  }
+
+  body {
+    background: var(--color-brand-ivory);
+  }
+
+  ::selection {
+    background: var(--color-brand-gold);
+    color: var(--color-brand-navy);
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .site-container {
+    width: min(100% - 2rem, 88rem);
+    margin-inline: auto;
+  }
+
+  .section-space {
+    padding-block: clamp(5.5rem, 10vw, 9rem);
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .display-title {
+    font-size: clamp(2.7rem, 5.5vw, 5.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.052em;
+    font-weight: 500;
+  }
+
+  .display-title span {
+    font-family: var(--font-playfair), serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-brand-copper);
+  }
+
+  .button-gold,
+  .button-dark {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 3.5rem;
+    padding: 0 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: background-color 300ms, color 300ms, transform 300ms;
+  }
+
+  .button-gold { background: var(--color-brand-gold); color: var(--color-brand-navy); }
+  .button-gold:hover { background: white; transform: translateY(-2px); }
+  .button-dark { background: var(--color-brand-navy); color: white; }
+  .button-dark:hover { background: var(--color-brand-copper); transform: translateY(-2px); }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-container { width: min(100% - 4rem, 88rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

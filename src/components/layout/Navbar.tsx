@@ -4,16 +4,16 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useUIStore } from "@/store/useUIStore";
-import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const navLinks =[
+const links = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Why Mak Shield", href: "/why-mak-shield" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -21,85 +21,47 @@ export function Navbar() {
   const pathname = usePathname();
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
 
-  useEffect(() => {
-    closeMobileMenu();
-  }, [pathname, closeMobileMenu]);
+  useEffect(() => closeMobileMenu(), [pathname, closeMobileMenu]);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white border-b border-brand-grey-light shadow-soft py-4">
-      <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
-        
-        <Link href="/" className="flex items-center group z-50">
-          <Image 
-            src="/images/blue&grey.png"
-            alt="Mak Shield Insurance" 
-            width={400} 
-            height={120} 
-            priority
-            className="h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-500 origin-left"
-          />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-brand-navy/95 text-white backdrop-blur-xl">
+      <div className="site-container flex h-24 items-center justify-between lg:h-28">
+        <Link href="/" className="relative z-50 flex items-center gap-3" aria-label="Mak Shield home">
+          <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} priority className="h-16 w-16 object-contain lg:h-20 lg:w-20" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+        <nav className="hidden items-center gap-8 lg:flex">
+          {links.map((link) => {
+            const active = pathname === link.href;
             return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-brand-grey relative py-2",
-                  isActive ? "text-brand-navy" : "text-brand-navy/70"
-                )}
-              >
+              <Link key={link.href} href={link.href} className={cn("relative py-3 text-[11px] font-semibold uppercase tracking-[.16em] text-white/65 transition hover:text-white", active && "text-white")}>
                 {link.name}
-                {isActive && (
-                  <motion.div 
-                    layoutId="navbar-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-brand-navy"
-                  />
-                )}
+                {active && <motion.span layoutId="nav-active" className="absolute inset-x-0 bottom-0 h-px bg-brand-gold" />}
               </Link>
             );
           })}
-          <Button 
-            asChild
-            className="ml-4 transition-all duration-500 bg-brand-navy text-white hover:bg-brand-navy-light rounded-none px-8 h-12 text-xs uppercase tracking-widest shadow-soft"
-          >
-            <Link href="/contact">Get a Quote</Link>
-          </Button>
+          <Link href="/contact" className="ml-3 inline-flex h-12 items-center gap-3 bg-brand-gold px-6 text-[11px] font-bold uppercase tracking-[.15em] text-brand-navy transition hover:bg-white">
+            Get a quote <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </nav>
 
-        <button
-          className="lg:hidden z-50 p-2 text-brand-navy"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle Menu"
-        >
-          {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+        <button onClick={toggleMobileMenu} className="relative z-50 grid h-12 w-12 place-items-center border border-white/20 lg:hidden" aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMobileMenuOpen}>
+          {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease:[0.16, 1, 0.3, 1] }}
-            className="absolute top-0 left-0 w-full h-screen bg-brand-white z-40 flex flex-col pt-36 px-6"
-          >
-            <nav className="flex flex-col gap-8 text-3xl font-bold tracking-tighter text-brand-navy">
-              {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} onClick={closeMobileMenu} className="border-b border-brand-navy/10 pb-4">
-                  {link.name}
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: .35 }} className="fixed inset-0 z-40 min-h-svh bg-brand-navy px-4 pb-8 pt-32">
+            <nav className="flex flex-col border-t border-white/15">
+              {links.map((link, index) => (
+                <Link key={link.href} href={link.href} className="flex items-center justify-between border-b border-white/15 py-5 text-3xl font-medium tracking-tight">
+                  {link.name}<span className="font-mono text-[10px] text-brand-gold">0{index + 1}</span>
                 </Link>
               ))}
             </nav>
-            <div className="mt-12">
-              <Button asChild size="lg" className="w-full bg-brand-navy text-white h-16 text-sm uppercase tracking-widest rounded-none">
-                <Link href="/contact">Get a Quote</Link>
-              </Button>
-            </div>
+            <Link href="/contact" className="button-gold mt-8 w-full">Talk to an advisor <ArrowUpRight className="h-4 w-4" /></Link>
+            <p className="eyebrow absolute bottom-8 text-white/35">Nairobi · Kenya · East Africa</p>
           </motion.div>
         )}
       </AnimatePresence>

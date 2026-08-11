@@ -58,7 +58,7 @@ export default function ContactForm() {
             type="email"
             {...register("email")}
             className="h-12 text-base px-4 border-brand-grey-light focus-visible:ring-brand-accent"
-            placeholder="john@company.com"
+            placeholder="john@company.co.ke"
           />
           {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
         </div>

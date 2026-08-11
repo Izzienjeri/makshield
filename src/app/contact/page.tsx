@@ -69,8 +69,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-brand-navy font-bold mb-1">Email</h4>
-                        <a href="mailto:info@makshieldinsurance.com" className="text-brand-grey leading-relaxed hover:text-brand-accent transition-colors">
-                          info@makshieldinsurance.com
+                        <a href="mailto:info@makshieldinsurance.co.ke" className="text-brand-grey leading-relaxed hover:text-brand-accent transition-colors">
+                          info@makshieldinsurance.co.ke
                         </a>
                       </div>
                     </div>
