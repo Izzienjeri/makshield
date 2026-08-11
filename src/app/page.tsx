@@ -75,7 +75,7 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden bg-brand-ivory text-brand-navy">
-      <section className="relative min-h-svh overflow-hidden bg-brand-navy pt-16 text-white lg:pt-20">
+      <section className="relative min-h-[90svh] overflow-hidden bg-brand-navy pt-16 text-white lg:min-h-[88svh] lg:pt-20">
         <div className="absolute inset-0">
           <AnimatePresence mode="popLayout">
             <motion.div key={heroImages[heroIndex].src} initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ opacity: { duration: 1.2 }, scale: { duration: 7, ease: "linear" } }} className="absolute inset-0">
@@ -86,7 +86,7 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#071421] to-transparent" />
         </div>
 
-        <div className="site-container relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-between pb-7 pt-10 lg:min-h-[calc(100svh-5rem)] lg:pb-8 lg:pt-12">
+        <div className="site-container relative z-10 flex min-h-[calc(90svh-4rem)] flex-col justify-between pb-7 pt-9 lg:min-h-[calc(88svh-5rem)] lg:pb-8 lg:pt-10">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .4 }} className="flex items-center gap-3">
             <span className="h-px w-10 bg-brand-gold" />
             <span className="eyebrow text-brand-gold">Independent · Client-first · Kenya</span>
@@ -234,14 +234,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-brand-gold py-14 text-brand-navy lg:py-16">
-        <div className="site-container flex flex-col justify-between gap-10 lg:flex-row lg:items-center">
-          <div>
-            <p className="eyebrow mb-4">Let’s begin</p>
-            <h2 className="max-w-3xl text-4xl font-medium tracking-[-.045em] sm:text-6xl">What matters to you deserves better protection.</h2>
+      <section className="relative overflow-hidden border-t border-brand-navy/10 bg-brand-sand py-14 text-brand-navy lg:py-16">
+        <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-[linear-gradient(135deg,transparent_0_49%,rgba(15,26,42,.05)_49%_50%,transparent_50%)] [background-size:32px_32px] lg:block" />
+        <div className="site-container relative flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
+          <div className="border-l-2 border-brand-gold pl-6">
+            <p className="eyebrow mb-4 text-brand-copper">Let’s begin</p>
+            <h2 className="max-w-3xl text-3xl font-medium leading-[1.05] tracking-[-.045em] sm:text-5xl">What matters to you deserves <span className="font-serif font-normal italic text-brand-copper">better protection.</span></h2>
           </div>
-          <Link href="/contact" className="grid h-20 w-20 shrink-0 place-items-center rounded-full border border-brand-navy transition hover:rotate-12 hover:bg-brand-navy hover:text-white sm:h-24 sm:w-24" aria-label="Start a conversation">
-            <ArrowUpRight className="h-6 w-6" />
+          <Link href="/contact" className="group inline-flex h-12 w-fit shrink-0 items-center gap-4 bg-brand-navy px-6 text-[10px] font-bold uppercase tracking-[.16em] text-white transition hover:bg-brand-copper">
+            Start a conversation <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
         </div>
       </section>
