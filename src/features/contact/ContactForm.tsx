@@ -39,14 +39,14 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-6 md:p-8 border border-brand-grey-light shadow-soft">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-6 md:p-8 border border-brand-navy/10 border-t-4 border-t-brand-navy shadow-soft">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-2">
           <label htmlFor="name" className="block text-sm font-medium text-brand-navy">Full Name</label>
           <Input
             id="name"
             {...register("name")}
-            className="h-12 text-base px-4 border-brand-grey-light focus-visible:ring-brand-accent"
+            className="h-11 rounded-none bg-brand-ivory text-base px-4 border-brand-navy/10 focus-visible:ring-brand-accent"
             placeholder="John Doe"
           />
           {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
@@ -57,7 +57,7 @@ export default function ContactForm() {
             id="email"
             type="email"
             {...register("email")}
-            className="h-12 text-base px-4 border-brand-grey-light focus-visible:ring-brand-accent"
+            className="h-11 rounded-none bg-brand-ivory text-base px-4 border-brand-navy/10 focus-visible:ring-brand-accent"
             placeholder="john@company.co.ke"
           />
           {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -70,7 +70,7 @@ export default function ContactForm() {
           id="phone"
           type="tel"
           {...register("phone")}
-          className="h-12 text-base px-4 border-brand-grey-light focus-visible:ring-brand-accent"
+          className="h-11 rounded-none bg-brand-ivory text-base px-4 border-brand-navy/10 focus-visible:ring-brand-accent"
           placeholder="+254 7XX XXX XXX"
         />
         {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
@@ -81,7 +81,7 @@ export default function ContactForm() {
         <Input
           id="company"
           {...register("company")}
-          className="h-12 text-base px-4 border-brand-grey-light focus-visible:ring-brand-accent"
+          className="h-11 rounded-none bg-brand-ivory text-base px-4 border-brand-navy/10 focus-visible:ring-brand-accent"
           placeholder="Acme Corp"
         />
       </div>
@@ -89,7 +89,7 @@ export default function ContactForm() {
       <div className="space-y-2">
         <label className="block text-sm font-medium text-brand-navy">Interested Service</label>
         <Select onValueChange={(value) => setValue("service", value)}>
-          <SelectTrigger className="w-full h-12 text-base px-4 border-brand-grey-light focus-visible:ring-brand-accent">
+          <SelectTrigger className="w-full h-11 rounded-none bg-brand-ivory text-base px-4 border-brand-navy/10 focus-visible:ring-brand-accent">
             <SelectValue placeholder="Select a service category..." />
           </SelectTrigger>
           <SelectContent>
@@ -110,7 +110,7 @@ export default function ContactForm() {
           id="message"
           {...register("message")}
           rows={5}
-          className="min-h-32 text-base px-4 py-3 border-brand-grey-light focus-visible:ring-brand-accent resize-y"
+          className="min-h-28 rounded-none bg-brand-ivory text-base px-4 py-3 border-brand-navy/10 focus-visible:ring-brand-accent resize-y"
           placeholder="Please describe your risk management needs or inquiry in detail..."
         />
         {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
@@ -119,7 +119,7 @@ export default function ContactForm() {
       <Button 
         type="submit" 
         disabled={isSubmitting}
-        className="w-full bg-brand-accent hover:bg-brand-accent/90 text-white h-14 text-lg transition-colors group rounded-sm shadow-soft"
+        className="w-full bg-brand-gold hover:bg-brand-navy text-brand-navy hover:text-white h-12 text-xs font-bold uppercase tracking-[.15em] transition-colors group rounded-none"
       >
         {isSubmitting ? (
           <Loader2 className="w-6 h-6 animate-spin text-white" />

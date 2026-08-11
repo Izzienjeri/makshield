@@ -25,9 +25,9 @@ export default function AboutPage() {
 
         </div>
         
-        <div className="container relative z-10 mx-auto px-6 lg:px-12">
+        <div className="site-container relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 mb-6 glass-panel">
+            <div className="inline-flex items-center gap-3 border-l border-brand-gold pl-4 mb-5">
               <ShieldCheck className="w-4 h-4 text-brand-accent" />
               <span className="text-white text-[10px] uppercase tracking-[0.2em] font-semibold">Corporate Profile</span>
             </div>
@@ -43,10 +43,10 @@ export default function AboutPage() {
 
       {/* Corporate Overview & Story */}
       <section className="py-16 lg:py-20 bg-brand-white relative">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
-              <h2 className="text-sm uppercase tracking-[0.2em] font-semibold text-brand-grey mb-4">Corporate Overview</h2>
+        <div className="site-container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <FadeIn direction="right" className="lg:col-span-7">
+              <h2 className="section-kicker mb-5">Corporate Overview</h2>
               <h3 className="text-3xl md:text-5xl font-bold text-brand-navy tracking-tighter mb-8 leading-tight">
                 Protecting our clients&apos; interests, <br />
                 <span className="font-serif italic text-brand-accent font-light">simplifying complexity.</span>
@@ -64,11 +64,12 @@ export default function AboutPage() {
               </div>
             </FadeIn>
             
-            <FadeIn direction="left">
-              <div className="relative aspect-[5/4] max-w-[550px] mx-auto flex items-center justify-center">
-                <div className="absolute inset-0 bg-brand-accent/20 blur-[80px] transform scale-90 -z-10" style={{ borderRadius: '32px 96px 32px 96px' }}></div>
-                <div className="relative w-full h-full overflow-hidden shadow-float border-[8px] border-white bg-white" style={{ borderRadius: '32px 96px 32px 96px' }}>
-                  <Image src="/images/black.png" alt="Mak Shield Logo" fill className="object-contain p-8" />
+            <FadeIn direction="left" className="lg:col-span-5">
+              <div className="relative aspect-[4/5] max-w-[450px] mx-auto flex items-center justify-center">
+                <div className="absolute -inset-3 border border-brand-gold/50 -z-10 translate-x-5 translate-y-5"></div>
+                <div className="relative w-full h-full overflow-hidden shadow-float bg-brand-navy [clip-path:polygon(0_0,100%_0,100%_88%,88%_100%,0_100%)]">
+                  <Image src="/images/hero18-hd.png" alt="Mak Shield client relationship" fill className="object-cover object-top" />
+                  <div className="absolute inset-0 bg-brand-navy/8" />
                 </div>
 
                 {/* Floating stat cards */}
@@ -88,10 +89,10 @@ export default function AboutPage() {
 
       {/* Mission & Vision */}
       <section className="py-16 lg:py-20 bg-brand-navy text-white relative">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="site-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/12 border border-white/12">
             <FadeIn direction="up" delay={0.1}>
-              <div className="p-10 lg:p-14 border border-white/10 bg-white/5 backdrop-blur-sm shadow-soft h-full hover:border-brand-accent/50 transition-colors duration-500">
+              <div className="p-8 lg:p-10 bg-brand-navy h-full hover:bg-brand-navy-light transition-colors duration-500">
                 <Target className="w-10 h-10 text-brand-accent mb-8" />
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">Our Mission</h3>
                 <p className="text-brand-grey-light/80 leading-relaxed font-light text-lg">
@@ -101,7 +102,7 @@ export default function AboutPage() {
             </FadeIn>
             
             <FadeIn direction="up" delay={0.3}>
-              <div className="p-10 lg:p-14 border border-white/10 bg-white/5 backdrop-blur-sm shadow-soft h-full hover:border-brand-accent/50 transition-colors duration-500">
+              <div className="p-8 lg:p-10 bg-brand-navy h-full hover:bg-brand-navy-light transition-colors duration-500">
                 <Compass className="w-10 h-10 text-brand-accent mb-8" />
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">Our Vision</h3>
                 <p className="text-brand-grey-light/80 leading-relaxed font-light text-lg">
@@ -115,10 +116,11 @@ export default function AboutPage() {
 
       {/* Core Values */}
       <section className="py-16 lg:py-20 bg-brand-grey-light">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="site-container">
           <FadeIn>
             <div className="max-w-3xl mb-10">
-              <h2 className="text-3xl md:text-5xl font-bold text-brand-navy tracking-tighter mb-6">Core Values</h2>
+              <p className="section-kicker mb-5">What guides us</p>
+              <h2 className="text-3xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-6">Core Values</h2>
               <p className="text-brand-grey font-light text-lg leading-relaxed text-balance">
                 These are not aspirational statements. They are operating principles that govern every interaction, every recommendation, and every claim we handle.
               </p>
@@ -128,7 +130,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {values.map((value, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="bg-white p-8 border border-brand-grey/10 shadow-soft rounded-sm h-full hover:-translate-y-2 transition-transform duration-500">
+                <div className="editorial-card p-7 h-full">
                   <CheckCircle2 className="w-6 h-6 text-brand-accent mb-6" />
                   <h4 className="text-xl font-bold text-brand-navy mb-2">{value.title}</h4>
                   <p className="text-brand-grey text-sm leading-relaxed">{value.desc}</p>
@@ -141,10 +143,9 @@ export default function AboutPage() {
 
       {/* Regulatory Compliance */}
       <section className="py-16 lg:py-20 bg-brand-white border-t border-brand-grey-light">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="site-container">
           <FadeIn>
-            <div className="bg-brand-navy p-10 lg:p-16 rounded-sm shadow-float text-white flex flex-col lg:flex-row gap-12 items-center relative overflow-hidden">
-              <div className="absolute right-0 top-0 w-64 h-64 bg-brand-accent/20 blur-[100px] rounded-full"></div>
+            <div className="bg-brand-navy p-8 lg:p-12 text-white flex flex-col lg:flex-row gap-10 items-center relative overflow-hidden border-l-4 border-brand-gold">
               
               <div className="lg:w-1/3 flex justify-center relative z-10">
                 <Award className="w-32 h-32 text-brand-accent opacity-90" />

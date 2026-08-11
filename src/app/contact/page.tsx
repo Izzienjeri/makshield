@@ -16,7 +16,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent"></div>
         </div>
         
-        <div className="container relative z-10 mx-auto px-6 lg:px-12 text-center max-w-3xl">
+        <div className="site-container relative z-10 text-left max-w-4xl">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-5">
               Initiate <span className="font-serif italic text-brand-accent font-light">Consultation.</span>
@@ -29,18 +29,19 @@ export default function ContactPage() {
       </section>
 
       <section className="py-14 lg:py-20 bg-brand-grey-light relative">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+        <div className="site-container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             
             {/* Left Col: Contact Details */}
             <div className="lg:col-span-5 flex flex-col space-y-12">
               <FadeIn direction="right">
                 <div>
-                  <h2 className="text-3xl font-bold text-brand-navy tracking-tight mb-8">Contact Information</h2>
+                  <p className="section-kicker mb-4">Reach us directly</p>
+                  <h2 className="text-3xl font-semibold text-brand-navy tracking-tight mb-7">Contact Information</h2>
                   
                   <div className="space-y-8">
                     <div className="flex gap-5 items-start">
-                      <div className="w-12 h-12 rounded-full bg-brand-navy/5 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 bg-brand-navy flex items-center justify-center shrink-0">
                         <MapPin className="w-5 h-5 text-brand-accent" />
                       </div>
                       <div>
@@ -54,7 +55,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex gap-5 items-start">
-                      <div className="w-12 h-12 rounded-full bg-brand-navy/5 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 bg-brand-navy flex items-center justify-center shrink-0">
                         <Phone className="w-5 h-5 text-brand-accent" />
                       </div>
                       <div>
@@ -64,7 +65,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex gap-5 items-start">
-                      <div className="w-12 h-12 rounded-full bg-brand-navy/5 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 bg-brand-navy flex items-center justify-center shrink-0">
                         <Mail className="w-5 h-5 text-brand-accent" />
                       </div>
                       <div>
@@ -76,7 +77,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex gap-5 items-start">
-                      <div className="w-12 h-12 rounded-full bg-brand-navy/5 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 bg-brand-navy flex items-center justify-center shrink-0">
                         <Clock className="w-5 h-5 text-brand-accent" />
                       </div>
                       <div>

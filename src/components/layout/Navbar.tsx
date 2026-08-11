@@ -24,7 +24,7 @@ export function Navbar() {
   useEffect(() => closeMobileMenu(), [pathname, closeMobileMenu]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-brand-navy/95 text-white backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-brand-gold/20 bg-brand-navy/96 text-white backdrop-blur-xl">
       <div className="site-container flex h-16 items-center justify-between lg:h-20">
         <Link href="/" className="relative z-50 flex h-16 w-16 items-center justify-center overflow-hidden lg:h-20 lg:w-20" aria-label="Mak Shield home">
           <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} priority className="h-[95%] w-[95%] object-contain" />

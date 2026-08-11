@@ -77,9 +77,9 @@ export default function ServicesPage() {
 
         </div>
         
-        <div className="container relative z-10 mx-auto px-6 lg:px-12">
+        <div className="site-container relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 mb-6 glass-panel">
+            <div className="inline-flex items-center gap-3 border-l border-brand-gold pl-4 mb-5">
               <Briefcase className="w-4 h-4 text-brand-accent" />
               <span className="text-white text-[10px] uppercase tracking-[0.2em] font-semibold">Expertise</span>
             </div>
@@ -95,11 +95,12 @@ export default function ServicesPage() {
 
       {/* Services List */}
       <section className="py-16 lg:py-20 bg-brand-white relative">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="site-container">
           
           <div className="max-w-3xl mb-12">
             <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-bold text-brand-navy tracking-tighter mb-6">
+              <p className="section-kicker mb-5">Our expertise</p>
+              <h2 className="text-3xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-6">
                 Rooted in reality. <br/>
                 <span className="font-serif italic text-brand-accent font-light">Guided by best practice.</span>
               </h2>

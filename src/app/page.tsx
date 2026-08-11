@@ -142,9 +142,9 @@ export default function Home() {
 
       <section id="approach" className="section-space relative">
         <div className="site-container">
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid gap-9 lg:grid-cols-12 lg:gap-12">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={reveal} className="lg:col-span-4">
-              <p className="eyebrow mb-6 text-brand-copper">Why Mak Shield</p>
+              <p className="section-kicker mb-5">Why Mak Shield</p>
               <p className="max-w-xs text-sm leading-6 text-brand-slate">Insurance is only as good as the thinking behind it—and the people who show up when it counts.</p>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={reveal} className="lg:col-span-8">
@@ -182,7 +182,7 @@ export default function Home() {
         <div className="site-container">
           <div className="mb-9 flex flex-col justify-between gap-6 border-b border-white/15 pb-7 md:flex-row md:items-end">
             <div>
-              <p className="eyebrow mb-5 text-brand-gold">What we do</p>
+              <p className="section-kicker mb-5 text-brand-gold">What we do</p>
               <h2 className="text-4xl font-medium tracking-[-.045em] sm:text-6xl">Protection, properly considered.</h2>
             </div>
             <Link href="/services" className="text-link text-brand-sand">View all services <ArrowUpRight className="h-4 w-4" /></Link>
@@ -209,7 +209,7 @@ export default function Home() {
       </section>
 
       <section className="section-space bg-brand-sand">
-        <div className="site-container grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
+        <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .9, ease }} className="relative lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image src="/images/client-support-editorial.png" alt="A Mak Shield advisor supporting a client through an important decision" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-center" />
@@ -221,7 +221,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} className="lg:col-span-7 lg:pl-8">
-            <p className="eyebrow mb-6 text-brand-copper">Built around you</p>
+            <p className="section-kicker mb-5">Built around you</p>
             <h2 className="display-title">A relationship that gets stronger <span>when pressure rises.</span></h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-brand-slate">From the first risk conversation to the final claim settlement, we make the complex understandable and the next step unmistakably clear.</p>
             <ul className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -240,8 +240,8 @@ export default function Home() {
             <p className="eyebrow mb-4">Let’s begin</p>
             <h2 className="max-w-3xl text-4xl font-medium tracking-[-.045em] sm:text-6xl">What matters to you deserves better protection.</h2>
           </div>
-          <Link href="/contact" className="grid h-24 w-24 shrink-0 place-items-center rounded-full border border-brand-navy transition hover:rotate-12 hover:bg-brand-navy hover:text-white sm:h-32 sm:w-32" aria-label="Start a conversation">
-            <ArrowUpRight className="h-8 w-8" />
+          <Link href="/contact" className="grid h-20 w-20 shrink-0 place-items-center rounded-full border border-brand-navy transition hover:rotate-12 hover:bg-brand-navy hover:text-white sm:h-24 sm:w-24" aria-label="Start a conversation">
+            <ArrowUpRight className="h-6 w-6" />
           </Link>
         </div>
       </section>

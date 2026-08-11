@@ -4,15 +4,15 @@ import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#071421] text-white">
-      <div className="site-container py-16 lg:py-24">
-        <div className="grid gap-14 lg:grid-cols-12">
+    <footer className="border-t-4 border-brand-gold bg-[#071421] text-white">
+      <div className="site-container py-14 lg:py-18">
+        <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Link href="/" className="flex h-32 w-32 items-center justify-center overflow-hidden" aria-label="Mak Shield home">
               <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} className="h-full w-full scale-[1.15] object-contain" />
             </Link>
-            <p className="mt-7 max-w-md text-lg font-light leading-8 text-white/60">Independent insurance brokerage and risk advisory for people and organisations who expect clearer thinking and stronger advocacy.</p>
-            <p className="mt-8 font-serif text-2xl italic text-brand-gold">Your risk. Our resolve.</p>
+            <p className="mt-5 max-w-md text-base font-light leading-7 text-white/60">Independent insurance brokerage and risk advisory for people and organisations who expect clearer thinking and stronger advocacy.</p>
+            <p className="mt-6 font-serif text-xl italic text-brand-gold">Your risk. Our resolve.</p>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-3 lg:col-span-7">
@@ -46,7 +46,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-5 border-t border-white/12 pt-7 text-[10px] uppercase tracking-[.16em] text-white/35 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-5 border-t border-white/12 pt-6 text-[10px] uppercase tracking-[.16em] text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Mak Shield Insurance Limited · Licensed by IRA Kenya</p>
           <div className="flex gap-6"><Link href="#">Privacy</Link><Link href="#">Terms</Link></div>
         </div>
