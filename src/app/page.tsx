@@ -234,16 +234,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-t border-brand-navy/10 bg-brand-sand py-14 text-brand-navy lg:py-16">
-        <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-[linear-gradient(135deg,transparent_0_49%,rgba(15,26,42,.05)_49%_50%,transparent_50%)] [background-size:32px_32px] lg:block" />
-        <div className="site-container relative flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
-          <div className="border-l-2 border-brand-gold pl-6">
-            <p className="eyebrow mb-4 text-brand-copper">Let’s begin</p>
-            <h2 className="max-w-3xl text-3xl font-medium leading-[1.05] tracking-[-.045em] sm:text-5xl">What matters to you deserves <span className="font-serif font-normal italic text-brand-copper">better protection.</span></h2>
+      <section className="bg-white py-16 text-brand-navy lg:py-20">
+        <div className="site-container">
+          <div className="grid border-y border-brand-navy/15 lg:grid-cols-12">
+            <div className="py-10 lg:col-span-8 lg:border-r lg:border-brand-navy/15 lg:py-12 lg:pr-14">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-brand-gold" />
+                <p className="eyebrow text-brand-copper">Your next step</p>
+              </div>
+              <h2 className="mt-6 max-w-3xl text-3xl font-medium leading-[1.04] tracking-[-.045em] sm:text-5xl">What matters to you deserves <span className="font-serif font-normal italic text-brand-copper">better protection.</span></h2>
+            </div>
+
+            <div className="flex flex-col justify-center gap-5 border-t border-brand-navy/15 py-8 lg:col-span-4 lg:border-t-0 lg:py-10 lg:pl-10">
+              <Link href="/quote" className="group flex items-center justify-between bg-brand-navy px-5 py-4 text-[10px] font-bold uppercase tracking-[.16em] text-white transition hover:bg-brand-copper">
+                Get a quote <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-sm text-brand-slate">Already have a question?</p>
+                <Link href="/contact" className="text-link shrink-0 text-brand-navy">Contact us <ArrowUpRight className="h-3.5 w-3.5" /></Link>
+              </div>
+            </div>
           </div>
-          <Link href="/contact" className="group inline-flex h-12 w-fit shrink-0 items-center gap-4 bg-brand-navy px-6 text-[10px] font-bold uppercase tracking-[.16em] text-white transition hover:bg-brand-copper">
-            Start a conversation <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
         </div>
       </section>
     </div>
