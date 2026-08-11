@@ -188,18 +188,18 @@ export default function Home() {
             <Link href="/services" className="text-link text-brand-sand">View all services <ArrowUpRight className="h-4 w-4" /></Link>
           </div>
 
-          <div className="grid gap-px bg-white/12 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-px bg-white/12">
             {services.map((service) => (
-              <Link key={service.title} href={service.href} className="group relative min-h-60 overflow-hidden bg-brand-navy p-5 sm:min-h-72 sm:p-8">
+              <Link key={service.title} href={service.href} className="group relative min-h-48 overflow-hidden bg-brand-navy p-4 sm:min-h-72 sm:p-8">
                 <Image src={service.image} alt="" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-0 transition duration-700 group-hover:scale-105 group-hover:opacity-25" />
-                <div className="relative z-10 flex h-full min-h-50 flex-col sm:min-h-58">
+                <div className="relative z-10 flex h-full min-h-40 flex-col sm:min-h-58">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-brand-gold">{service.number}</span>
-                    <span className="grid h-9 w-9 place-items-center rounded-full border border-white/20 transition group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy sm:h-11 sm:w-11"><ArrowUpRight className="h-4 w-4" /></span>
+                    <span className="grid h-7 w-7 place-items-center rounded-full border border-white/20 transition group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy sm:h-11 sm:w-11"><ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4" /></span>
                   </div>
                   <div className="mt-auto">
-                    <h3 className="text-xl font-medium tracking-[-.035em] sm:text-3xl">{service.title}</h3>
-                    <p className="mt-3 max-w-md text-sm leading-6 text-white/60 sm:mt-4 sm:text-base sm:leading-7">{service.copy}</p>
+                    <h3 className="text-base font-medium leading-tight tracking-[-.025em] sm:text-3xl">{service.title}</h3>
+                    <p className="mt-2 max-w-md text-[11px] leading-4 text-white/55 sm:mt-4 sm:text-base sm:leading-7">{service.copy}</p>
                   </div>
                 </div>
               </Link>
@@ -209,7 +209,7 @@ export default function Home() {
       </section>
 
       <section className="section-space bg-brand-sand">
-        <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="site-container grid items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-14">
           <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .9, ease }} className="relative lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image src="/images/client-support-editorial.png" alt="A Mak Shield advisor supporting a client through an important decision" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-center" />

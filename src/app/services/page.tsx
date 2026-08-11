@@ -94,10 +94,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white relative">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-white relative">
         <div className="site-container">
           
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-8 sm:mb-12">
             <FadeIn>
               <p className="section-kicker mb-5">Our expertise</p>
               <h2 className="text-3xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-6">
@@ -110,11 +110,11 @@ export default function ServicesPage() {
             </FadeIn>
           </div>
 
-          <div className="space-y-12 sm:space-y-16 lg:space-y-20">
+          <div className="space-y-9 sm:space-y-16 lg:space-y-20">
             {services.map((service, index) => (
               <div key={service.id} id={service.id} className="scroll-mt-32">
                 <FadeIn delay={0.1}>
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-16 items-center">
                     
                     <div className={cn(
                       "lg:col-span-5 relative w-full aspect-[5/4] max-w-[550px] mx-auto flex items-center justify-center",
@@ -152,13 +152,13 @@ export default function ServicesPage() {
                       </div>
 
                       <div className="pt-6 border-t border-brand-grey/20">
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-4">
+                        <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-7 sm:gap-y-4">
                           {service.features.map((feature, fIdx) => (
                             <li key={fIdx} className="flex items-start gap-4">
                               <div className="mt-1 w-5 h-5 rounded-full bg-brand-accent/10 flex items-center justify-center shrink-0">
                                 <Check className="w-3 h-3 text-brand-accent" />
                               </div>
-                              <span className="text-brand-navy font-medium leading-snug">{feature}</span>
+                              <span className="text-xs text-brand-navy font-medium leading-snug sm:text-base">{feature}</span>
                             </li>
                           ))}
                         </ul>

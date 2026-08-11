@@ -37,10 +37,10 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* The Differentiators Grid */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-white">
         <div className="site-container">
           <FadeIn>
-            <div className="max-w-4xl mb-10">
+            <div className="max-w-4xl mb-7 sm:mb-10">
               <p className="section-kicker mb-5">The Mak Shield difference</p>
               <h2 className="text-3xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-6">
                 Professionals who prioritize the client over the commission.
@@ -51,15 +51,15 @@ export default function WhyMakShieldPage() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-3">
             {reasons.map((reason, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="editorial-card p-5 sm:p-7 border-t-2 border-t-brand-navy h-full group">
-                  <div className="w-11 h-11 bg-brand-navy/5 rounded-full flex items-center justify-center text-brand-navy mb-5 group-hover:bg-brand-navy group-hover:text-brand-accent transition-colors duration-500 [&_svg]:h-5 [&_svg]:w-5">
+                <div className="editorial-card p-4 sm:p-7 border-t-2 border-t-brand-navy h-full group">
+                  <div className="w-8 h-8 sm:w-11 sm:h-11 bg-brand-navy/5 rounded-full flex items-center justify-center text-brand-navy mb-3 sm:mb-5 group-hover:bg-brand-navy group-hover:text-brand-accent transition-colors duration-500 [&_svg]:h-4 [&_svg]:w-4 sm:[&_svg]:h-5 sm:[&_svg]:w-5">
                     {reason.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-brand-navy mb-3">{reason.title}</h3>
-                  <p className="text-brand-grey leading-relaxed">{reason.desc}</p>
+                  <h3 className="text-sm font-bold leading-tight text-brand-navy mb-2 sm:text-xl sm:mb-3">{reason.title}</h3>
+                  <p className="text-[11px] leading-4 text-brand-grey sm:text-base sm:leading-relaxed">{reason.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -68,7 +68,7 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* Our Reach */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-navy text-white relative overflow-hidden">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-navy text-white relative overflow-hidden">
         <div className="site-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <FadeIn direction="right" className="lg:col-span-6">
@@ -100,7 +100,7 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* Our Promise */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-grey-light">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-grey-light">
         <div className="site-container text-center max-w-4xl">
           <FadeIn>
             <Shield className="w-16 h-16 text-brand-accent mx-auto mb-8" />

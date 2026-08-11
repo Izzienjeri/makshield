@@ -42,7 +42,7 @@ export default function AboutPage() {
       </section>
 
       {/* Corporate Overview & Story */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white relative">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-white relative">
         <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             <FadeIn direction="right" className="lg:col-span-7">
@@ -88,7 +88,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-navy text-white relative">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-navy text-white relative">
         <div className="site-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/12 border border-white/12">
             <FadeIn direction="up" delay={0.1}>
@@ -115,10 +115,10 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-grey-light">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-grey-light">
         <div className="site-container">
           <FadeIn>
-            <div className="max-w-3xl mb-10">
+            <div className="max-w-3xl mb-7 sm:mb-10">
               <p className="section-kicker mb-5">What guides us</p>
               <h2 className="text-3xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-6">Core Values</h2>
               <p className="text-brand-grey font-light text-lg leading-relaxed text-balance">
@@ -127,13 +127,13 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
             {values.map((value, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="editorial-card p-5 sm:p-7 h-full">
-                  <CheckCircle2 className="w-6 h-6 text-brand-accent mb-6" />
-                  <h4 className="text-xl font-bold text-brand-navy mb-2">{value.title}</h4>
-                  <p className="text-brand-grey text-sm leading-relaxed">{value.desc}</p>
+                <div className="editorial-card p-4 sm:p-7 h-full">
+                  <CheckCircle2 className="w-4 h-4 sm:w-6 sm:h-6 text-brand-accent mb-3 sm:mb-6" />
+                  <h4 className="text-sm sm:text-xl font-bold leading-tight text-brand-navy mb-2">{value.title}</h4>
+                  <p className="text-brand-grey text-[11px] leading-4 sm:text-sm sm:leading-relaxed">{value.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -142,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       {/* Regulatory Compliance */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white border-t border-brand-grey-light">
+      <section className="py-9 sm:py-16 lg:py-20 bg-brand-white border-t border-brand-grey-light">
         <div className="site-container">
           <FadeIn>
             <div className="bg-brand-navy p-6 sm:p-8 lg:p-12 text-white flex flex-col lg:flex-row gap-7 lg:gap-10 items-center relative overflow-hidden border-l-4 border-brand-gold">

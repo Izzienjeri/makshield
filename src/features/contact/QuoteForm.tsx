@@ -50,9 +50,9 @@ export default function QuoteForm() {
 
       <fieldset className="mt-7">
         <legend className="mb-3 text-sm font-medium text-brand-navy">What would you like to protect?</legend>
-        <div className="grid gap-2 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-2">
           {coverOptions.map((option, index) => (
-            <label key={option} className="group relative flex cursor-pointer items-center gap-3 border border-brand-navy/12 p-3 text-sm text-brand-slate transition hover:border-brand-gold has-checked:border-brand-navy has-checked:bg-brand-navy has-checked:text-white">
+            <label key={option} className="group relative flex cursor-pointer items-center gap-2 border border-brand-navy/12 p-2.5 text-xs text-brand-slate transition hover:border-brand-gold has-checked:border-brand-navy has-checked:bg-brand-navy has-checked:text-white sm:gap-3 sm:p-3 sm:text-sm">
               <input required={index === 0} type="radio" name="cover" value={option} className="peer sr-only" />
               <span className="grid h-5 w-5 place-items-center rounded-full border border-current"><Check className="h-3 w-3 opacity-0 peer-checked:opacity-100" /></span>
               {option}

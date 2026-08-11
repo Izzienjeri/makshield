@@ -46,7 +46,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/12 pt-6 text-[10px] uppercase tracking-[.16em] text-white/35">
+        <div className="mt-8 border-t border-white/12 pt-5 text-[9px] uppercase tracking-[.14em] text-white/35 sm:mt-12 sm:pt-6 sm:text-[10px] sm:tracking-[.16em]">
           <p>© {new Date().getFullYear()} Mak Shield Insurance Limited · Licensed by IRA Kenya</p>
         </div>
       </div>

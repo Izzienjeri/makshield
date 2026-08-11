@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
       
       {/* Small Hero */}
-      <section className="inner-hero relative py-11 sm:py-14 lg:py-18 bg-brand-navy overflow-hidden">
+      <section className="inner-hero relative py-9 sm:py-14 lg:py-18 bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/hero18-hd.png" alt="Speak with Mak Shield" fill className="object-cover object-top opacity-25" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent"></div>
@@ -28,18 +28,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-11 sm:py-14 lg:py-20 bg-brand-grey-light relative">
+      <section className="py-9 sm:py-14 lg:py-20 bg-brand-grey-light relative">
         <div className="site-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
             
             {/* Left Col: Contact Details */}
-            <div className="lg:col-span-5 flex flex-col space-y-12">
+            <div className="lg:col-span-5 flex flex-col space-y-8 sm:space-y-12">
               <FadeIn direction="right">
                 <div>
                   <p className="section-kicker mb-4">Reach us directly</p>
                   <h2 className="text-3xl font-semibold text-brand-navy tracking-tight mb-7">Contact Information</h2>
                   
-                  <div className="space-y-8">
+                  <div className="space-y-5 sm:space-y-8">
                     <div className="flex gap-5 items-start">
                       <div className="w-10 h-10 bg-brand-navy flex items-center justify-center shrink-0">
                         <MapPin className="w-5 h-5 text-brand-accent" />
@@ -91,7 +91,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="mt-12 pt-10 border-t border-brand-grey/20">
+                <div className="mt-8 pt-6 sm:mt-12 sm:pt-10 border-t border-brand-grey/20">
                   <h4 className="text-sm uppercase tracking-[0.2em] font-semibold text-brand-grey mb-6">Social Media</h4>
                   <div className="flex gap-6">
                     <a href="#" className="text-brand-navy hover:text-brand-accent transition-colors font-semibold">LinkedIn</a>
