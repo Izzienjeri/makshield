@@ -19,7 +19,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
       
       {/* Hero Section */}
-      <section className="inner-hero relative h-[52vh] min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
+      <section className="inner-hero relative h-[46vh] min-h-[360px] sm:h-[52vh] sm:min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/storyhero.png" alt="About Mak Shield" fill className="object-cover opacity-30" priority />
 
@@ -42,9 +42,9 @@ export default function AboutPage() {
       </section>
 
       {/* Corporate Overview & Story */}
-      <section className="py-16 lg:py-20 bg-brand-white relative">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white relative">
         <div className="site-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             <FadeIn direction="right" className="lg:col-span-7">
               <h2 className="section-kicker mb-5">Corporate Overview</h2>
               <h3 className="text-3xl md:text-5xl font-bold text-brand-navy tracking-tighter mb-8 leading-tight">
@@ -88,11 +88,11 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 lg:py-20 bg-brand-navy text-white relative">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-navy text-white relative">
         <div className="site-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/12 border border-white/12">
             <FadeIn direction="up" delay={0.1}>
-              <div className="p-8 lg:p-10 bg-brand-navy h-full hover:bg-brand-navy-light transition-colors duration-500">
+              <div className="p-6 sm:p-8 lg:p-10 bg-brand-navy h-full hover:bg-brand-navy-light transition-colors duration-500">
                 <Target className="w-10 h-10 text-brand-accent mb-8" />
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">Our Mission</h3>
                 <p className="text-brand-grey-light/80 leading-relaxed font-light text-lg">
@@ -102,7 +102,7 @@ export default function AboutPage() {
             </FadeIn>
             
             <FadeIn direction="up" delay={0.3}>
-              <div className="p-8 lg:p-10 bg-brand-navy h-full hover:bg-brand-navy-light transition-colors duration-500">
+              <div className="p-6 sm:p-8 lg:p-10 bg-brand-navy h-full hover:bg-brand-navy-light transition-colors duration-500">
                 <Compass className="w-10 h-10 text-brand-accent mb-8" />
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">Our Vision</h3>
                 <p className="text-brand-grey-light/80 leading-relaxed font-light text-lg">
@@ -115,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 lg:py-20 bg-brand-grey-light">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-grey-light">
         <div className="site-container">
           <FadeIn>
             <div className="max-w-3xl mb-10">
@@ -130,7 +130,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {values.map((value, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="editorial-card p-7 h-full">
+                <div className="editorial-card p-5 sm:p-7 h-full">
                   <CheckCircle2 className="w-6 h-6 text-brand-accent mb-6" />
                   <h4 className="text-xl font-bold text-brand-navy mb-2">{value.title}</h4>
                   <p className="text-brand-grey text-sm leading-relaxed">{value.desc}</p>
@@ -142,10 +142,10 @@ export default function AboutPage() {
       </section>
 
       {/* Regulatory Compliance */}
-      <section className="py-16 lg:py-20 bg-brand-white border-t border-brand-grey-light">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white border-t border-brand-grey-light">
         <div className="site-container">
           <FadeIn>
-            <div className="bg-brand-navy p-8 lg:p-12 text-white flex flex-col lg:flex-row gap-10 items-center relative overflow-hidden border-l-4 border-brand-gold">
+            <div className="bg-brand-navy p-6 sm:p-8 lg:p-12 text-white flex flex-col lg:flex-row gap-7 lg:gap-10 items-center relative overflow-hidden border-l-4 border-brand-gold">
               
               <div className="lg:w-1/3 flex justify-center relative z-10">
                 <Award className="w-32 h-32 text-brand-accent opacity-90" />

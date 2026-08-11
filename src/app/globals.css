@@ -83,7 +83,7 @@
   }
 
   .section-space {
-    padding-block: clamp(3.75rem, 6vw, 6.5rem);
+    padding-block: clamp(3.25rem, 6vw, 6.5rem);
   }
 
   .eyebrow {
@@ -95,7 +95,7 @@
   }
 
   .display-title {
-    font-size: clamp(2.35rem, 4.6vw, 4.4rem);
+    font-size: clamp(2.15rem, 4.6vw, 4.4rem);
     line-height: 0.98;
     letter-spacing: -0.052em;
     font-weight: 500;

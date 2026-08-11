@@ -71,7 +71,7 @@ export default function ServicesPage() {
     <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
       
       {/* Hero Section */}
-      <section className="inner-hero relative h-[52vh] min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
+      <section className="inner-hero relative h-[46vh] min-h-[360px] sm:h-[52vh] sm:min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/insurance.png" alt="Mak Shield Services" fill className="object-cover opacity-30" priority />
 
@@ -94,7 +94,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-16 lg:py-20 bg-brand-white relative">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white relative">
         <div className="site-container">
           
           <div className="max-w-3xl mb-12">
@@ -110,7 +110,7 @@ export default function ServicesPage() {
             </FadeIn>
           </div>
 
-          <div className="space-y-16 lg:space-y-20">
+          <div className="space-y-12 sm:space-y-16 lg:space-y-20">
             {services.map((service, index) => (
               <div key={service.id} id={service.id} className="scroll-mt-32">
                 <FadeIn delay={0.1}>
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                     </div>
 
                     <div className={cn(
-                      "lg:col-span-7 bg-brand-grey-light/30 p-7 md:p-10 border border-brand-grey-light shadow-soft rounded-sm hover:shadow-float transition-all duration-500",
+                      "lg:col-span-7 bg-brand-grey-light/30 p-5 sm:p-7 md:p-10 border border-brand-grey-light shadow-soft rounded-sm hover:shadow-float transition-all duration-500",
                       index % 2 === 1 ? "lg:order-first" : ""
                     )}>
                       <div className="flex flex-col items-start mb-8">

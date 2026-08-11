@@ -24,7 +24,7 @@ export default function QuoteForm() {
   }
 
   return (
-    <form onSubmit={submitQuote} className="bg-white p-6 shadow-[0_30px_80px_-35px_rgba(15,26,42,.35)] sm:p-8 lg:p-10">
+    <form onSubmit={submitQuote} className="bg-white p-5 shadow-[0_30px_80px_-35px_rgba(15,26,42,.35)] sm:p-8 lg:p-10">
       <div className="mb-7 flex items-start justify-between gap-6 border-b border-brand-navy/10 pb-6">
         <div>
           <p className="eyebrow text-brand-copper">Quote request</p>

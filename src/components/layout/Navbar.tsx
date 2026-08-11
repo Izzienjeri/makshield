@@ -52,16 +52,16 @@ export function Navbar() {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: .35 }} className="fixed inset-0 z-40 min-h-svh bg-brand-navy px-4 pb-8 pt-32 text-white">
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: .35 }} className="fixed inset-0 z-40 min-h-svh bg-brand-navy px-4 pb-6 pt-24 text-white">
             <nav className="flex flex-col border-t border-white/15">
               {links.map((link, index) => (
-                <Link key={link.href} href={link.href} className="flex items-center justify-between border-b border-white/15 py-5 text-3xl font-medium tracking-tight">
+                <Link key={link.href} href={link.href} className="flex items-center justify-between border-b border-white/15 py-4 text-2xl font-medium tracking-tight">
                   {link.name}<span className="font-mono text-[10px] text-brand-gold">0{index + 1}</span>
                 </Link>
               ))}
             </nav>
-            <Link href="/quote" className="button-gold mt-8 w-full">Get a quote <ArrowUpRight className="h-4 w-4" /></Link>
-            <p className="eyebrow absolute bottom-8 text-white/35">Nairobi · Kenya · East Africa</p>
+            <Link href="/quote" className="button-gold mt-6 w-full">Get a quote <ArrowUpRight className="h-4 w-4" /></Link>
+            <p className="eyebrow absolute bottom-6 text-white/35">Nairobi · Kenya · East Africa</p>
           </motion.div>
         )}
       </AnimatePresence>

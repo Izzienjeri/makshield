@@ -86,26 +86,26 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#071421] to-transparent" />
         </div>
 
-        <div className="site-container relative z-10 flex min-h-[calc(90svh-4rem)] flex-col justify-between pb-7 pt-9 lg:min-h-[calc(88svh-5rem)] lg:pb-8 lg:pt-10">
+        <div className="site-container relative z-10 flex min-h-[calc(90svh-4rem)] flex-col justify-between pb-5 pt-7 sm:pb-7 sm:pt-9 lg:min-h-[calc(88svh-5rem)] lg:pb-8 lg:pt-10">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .4 }} className="flex items-center gap-3">
             <span className="h-px w-10 bg-brand-gold" />
             <span className="eyebrow text-brand-gold">Independent · Client-first · Kenya</span>
           </motion.div>
 
           <div className="max-w-[62rem]">
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .25, duration: .8, ease }} className="mb-4 font-serif text-lg italic text-white/70 md:text-xl">
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .25, duration: .8, ease }} className="mb-3 font-serif text-base italic text-white/70 sm:text-lg md:text-xl">
               When certainty matters most
             </motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 38 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease }} className="text-[clamp(3.5rem,7.5vw,7rem)] font-medium leading-[.82] tracking-[-.065em]">
+            <motion.h1 initial={{ opacity: 0, y: 38 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease }} className="text-[clamp(3rem,7.5vw,7rem)] font-medium leading-[.84] tracking-[-.06em]">
               Your risk.<br /><span className="font-serif font-normal italic text-brand-gold">Our resolve.</span>
             </motion.h1>
-            <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .4, duration: .8, ease }} className="mt-7 flex max-w-3xl flex-col gap-6 md:flex-row md:items-center">
-              <p className="max-w-xl border-l border-brand-gold pl-5 text-base leading-7 text-white/72 md:text-lg">Independent advice, intelligent protection, and unwavering advocacy for everything you have worked to build.</p>
+            <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .4, duration: .8, ease }} className="mt-5 flex max-w-3xl flex-col gap-4 sm:mt-7 sm:gap-6 md:flex-row md:items-center">
+              <p className="max-w-xl border-l border-brand-gold pl-4 text-sm leading-6 text-white/72 sm:pl-5 sm:text-base sm:leading-7 md:text-lg">Independent advice, intelligent protection, and unwavering advocacy for everything you have worked to build.</p>
               <Link href="/contact" className="button-gold shrink-0">Start a conversation <ArrowUpRight className="h-4 w-4" /></Link>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 border-t border-white/20 pt-5 md:grid-cols-[1fr_auto_auto] md:items-center md:gap-14">
+          <div className="grid grid-cols-2 gap-4 border-t border-white/20 pt-4 md:grid-cols-[1fr_auto_auto] md:items-center md:gap-14 md:pt-5">
             <div className="hidden items-center gap-5 md:flex">
               <a href="#approach" className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.18em] text-white/55 hover:text-brand-gold">Explore Mak Shield <ArrowDown className="h-4 w-4" /></a>
               <div className="flex gap-2" aria-label="Hero image navigation">
@@ -114,8 +114,8 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div><p className="text-2xl font-medium text-brand-gold">Global</p><p className="mt-1 text-[9px] uppercase tracking-[.16em] text-white/45">market access</p></div>
-            <div><p className="text-2xl font-medium text-brand-gold">End-to-end</p><p className="mt-1 text-[9px] uppercase tracking-[.16em] text-white/45">claims advocacy</p></div>
+            <div><p className="text-lg font-medium text-brand-gold sm:text-2xl">Global</p><p className="mt-1 text-[8px] uppercase tracking-[.14em] text-white/45 sm:text-[9px]">market access</p></div>
+            <div><p className="text-lg font-medium text-brand-gold sm:text-2xl">End-to-end</p><p className="mt-1 text-[8px] uppercase tracking-[.14em] text-white/45 sm:text-[9px]">claims advocacy</p></div>
           </div>
         </div>
       </section>
@@ -188,18 +188,18 @@ export default function Home() {
             <Link href="/services" className="text-link text-brand-sand">View all services <ArrowUpRight className="h-4 w-4" /></Link>
           </div>
 
-          <div className="grid gap-px bg-white/12 lg:grid-cols-2">
+          <div className="grid gap-px bg-white/12 sm:grid-cols-2">
             {services.map((service) => (
-              <Link key={service.title} href={service.href} className="group relative min-h-72 overflow-hidden bg-brand-navy p-6 sm:p-8">
+              <Link key={service.title} href={service.href} className="group relative min-h-60 overflow-hidden bg-brand-navy p-5 sm:min-h-72 sm:p-8">
                 <Image src={service.image} alt="" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-0 transition duration-700 group-hover:scale-105 group-hover:opacity-25" />
-                <div className="relative z-10 flex h-full min-h-58 flex-col">
+                <div className="relative z-10 flex h-full min-h-50 flex-col sm:min-h-58">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-brand-gold">{service.number}</span>
-                    <span className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy"><ArrowUpRight className="h-4 w-4" /></span>
+                    <span className="grid h-9 w-9 place-items-center rounded-full border border-white/20 transition group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy sm:h-11 sm:w-11"><ArrowUpRight className="h-4 w-4" /></span>
                   </div>
                   <div className="mt-auto">
-                    <h3 className="text-2xl font-medium tracking-[-.035em] sm:text-3xl">{service.title}</h3>
-                    <p className="mt-4 max-w-md leading-7 text-white/60">{service.copy}</p>
+                    <h3 className="text-xl font-medium tracking-[-.035em] sm:text-3xl">{service.title}</h3>
+                    <p className="mt-3 max-w-md text-sm leading-6 text-white/60 sm:mt-4 sm:text-base sm:leading-7">{service.copy}</p>
                   </div>
                 </div>
               </Link>
@@ -234,10 +234,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-16 text-brand-navy lg:py-20">
+      <section className="bg-white py-12 text-brand-navy sm:py-16 lg:py-20">
         <div className="site-container">
           <div className="grid border-y border-brand-navy/15 lg:grid-cols-12">
-            <div className="py-10 lg:col-span-8 lg:border-r lg:border-brand-navy/15 lg:py-12 lg:pr-14">
+            <div className="py-7 sm:py-10 lg:col-span-8 lg:border-r lg:border-brand-navy/15 lg:py-12 lg:pr-14">
               <div className="flex items-center gap-3">
                 <span className="h-px w-8 bg-brand-gold" />
                 <p className="eyebrow text-brand-copper">Your next step</p>

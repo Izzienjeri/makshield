@@ -5,10 +5,10 @@ import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t-4 border-brand-gold bg-[#071421] text-white">
-      <div className="site-container py-14 lg:py-18">
+      <div className="site-container py-10 sm:py-14 lg:py-18">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Link href="/" className="flex h-32 w-32 items-center justify-center overflow-hidden" aria-label="Mak Shield home">
+            <Link href="/" className="flex h-24 w-24 items-center justify-center overflow-hidden sm:h-32 sm:w-32" aria-label="Mak Shield home">
               <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} className="h-full w-full scale-[1.15] object-contain" />
             </Link>
             <p className="mt-5 max-w-md text-base font-light leading-7 text-white/60">Independent insurance brokerage and risk advisory for people and organisations who expect clearer thinking and stronger advocacy.</p>

@@ -18,7 +18,7 @@ export default function WhyMakShieldPage() {
     <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
       
       {/* Hero Section */}
-      <section className="inner-hero relative h-[52vh] min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
+      <section className="inner-hero relative h-[46vh] min-h-[360px] sm:h-[52vh] sm:min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/hero16-hd.png" alt="Why choose Mak Shield" fill className="object-cover object-top opacity-30" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"></div>
@@ -37,7 +37,7 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* The Differentiators Grid */}
-      <section className="py-16 lg:py-20 bg-brand-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-white">
         <div className="site-container">
           <FadeIn>
             <div className="max-w-4xl mb-10">
@@ -54,7 +54,7 @@ export default function WhyMakShieldPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {reasons.map((reason, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="editorial-card p-7 border-t-2 border-t-brand-navy h-full group">
+                <div className="editorial-card p-5 sm:p-7 border-t-2 border-t-brand-navy h-full group">
                   <div className="w-11 h-11 bg-brand-navy/5 rounded-full flex items-center justify-center text-brand-navy mb-5 group-hover:bg-brand-navy group-hover:text-brand-accent transition-colors duration-500 [&_svg]:h-5 [&_svg]:w-5">
                     {reason.icon}
                   </div>
@@ -68,7 +68,7 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* Our Reach */}
-      <section className="py-16 lg:py-20 bg-brand-navy text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-navy text-white relative overflow-hidden">
         <div className="site-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <FadeIn direction="right" className="lg:col-span-6">
@@ -100,7 +100,7 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* Our Promise */}
-      <section className="py-16 lg:py-20 bg-brand-grey-light">
+      <section className="py-12 sm:py-16 lg:py-20 bg-brand-grey-light">
         <div className="site-container text-center max-w-4xl">
           <FadeIn>
             <Shield className="w-16 h-16 text-brand-accent mx-auto mb-8" />

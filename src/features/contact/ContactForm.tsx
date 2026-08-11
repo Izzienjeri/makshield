@@ -39,8 +39,8 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-6 md:p-8 border border-brand-navy/10 border-t-4 border-t-brand-navy shadow-soft">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 bg-white p-5 sm:p-6 md:p-8 border border-brand-navy/10 border-t-4 border-t-brand-navy shadow-soft">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
         <div className="space-y-2">
           <label htmlFor="name" className="block text-sm font-medium text-brand-navy">Full Name</label>
           <Input
