@@ -49,18 +49,18 @@ export function Navbar() {
           <span className="relative block h-5 w-7" aria-hidden="true">
             <motion.span
               className="absolute right-0 top-0.5 block h-px bg-current"
-              animate={isMobileMenuOpen ? { width: 24, y: 8, rotate: 45 } : { width: 28, y: 0, rotate: 0 }}
-              transition={{ duration: .35, ease: [0.16, 1, 0.3, 1] }}
+              animate={isMobileMenuOpen ? { width: 24, y: 8, rotate: 45 } : { width: [28, 20, 25, 28], y: 0, rotate: 0 }}
+              transition={isMobileMenuOpen ? { duration: .35, ease: [0.16, 1, 0.3, 1] } : { width: { duration: 2.8, repeat: Infinity, ease: "easeInOut" }, y: { duration: .35 }, rotate: { duration: .35 } }}
             />
             <motion.span
               className="absolute right-0 top-[9px] block h-px bg-current"
-              animate={isMobileMenuOpen ? { width: 0, opacity: 0, x: 8 } : { width: 18, opacity: 1, x: 0 }}
-              transition={{ duration: .25, ease: [0.16, 1, 0.3, 1] }}
+              animate={isMobileMenuOpen ? { width: 0, opacity: 0, x: 8 } : { width: [18, 25, 14, 18], opacity: 1, x: 0 }}
+              transition={isMobileMenuOpen ? { duration: .25, ease: [0.16, 1, 0.3, 1] } : { width: { duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: .2 }, opacity: { duration: .2 }, x: { duration: .25 } }}
             />
             <motion.span
               className="absolute right-0 top-[17px] block h-px bg-current"
-              animate={isMobileMenuOpen ? { width: 24, y: -8, rotate: -45 } : { width: 23, y: 0, rotate: 0 }}
-              transition={{ duration: .35, ease: [0.16, 1, 0.3, 1] }}
+              animate={isMobileMenuOpen ? { width: 24, y: -8, rotate: -45 } : { width: [23, 16, 28, 23], y: 0, rotate: 0 }}
+              transition={isMobileMenuOpen ? { duration: .35, ease: [0.16, 1, 0.3, 1] } : { width: { duration: 3.1, repeat: Infinity, ease: "easeInOut", delay: .4 }, y: { duration: .35 }, rotate: { duration: .35 } }}
             />
           </span>
         </button>
