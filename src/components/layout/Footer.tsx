@@ -8,8 +8,8 @@ export function Footer() {
       <div className="site-container py-16 lg:py-24">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Link href="/" aria-label="Mak Shield home">
-              <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} className="h-24 w-24 object-contain" />
+            <Link href="/" className="flex h-32 w-32 items-center justify-center overflow-hidden" aria-label="Mak Shield home">
+              <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} className="h-full w-full scale-[1.15] object-contain" />
             </Link>
             <p className="mt-7 max-w-md text-lg font-light leading-8 text-white/60">Independent insurance brokerage and risk advisory for people and organisations who expect clearer thinking and stronger advocacy.</p>
             <p className="mt-8 font-serif text-2xl italic text-brand-gold">Your risk. Our resolve.</p>

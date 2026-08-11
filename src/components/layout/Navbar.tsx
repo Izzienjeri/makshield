@@ -26,8 +26,8 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-brand-navy/95 text-white backdrop-blur-xl">
       <div className="site-container flex h-20 items-center justify-between lg:h-24">
-        <Link href="/" className="relative z-50 flex items-center gap-3" aria-label="Mak Shield home">
-          <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} priority className="h-14 w-14 object-contain lg:h-16 lg:w-16" />
+        <Link href="/" className="relative z-50 flex h-20 w-20 items-center justify-center overflow-hidden lg:h-24 lg:w-24" aria-label="Mak Shield home">
+          <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} priority className="h-full w-full scale-[1.15] object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

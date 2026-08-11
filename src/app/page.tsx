@@ -212,7 +212,7 @@ export default function Home() {
         <div className="site-container grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
           <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .9, ease }} className="relative lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden">
-              <Image src="/images/hero12-hd.png" alt="Protection for families, businesses and futures" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-top" />
+              <Image src="/images/claim2.png" alt="A Mak Shield advisor supporting a client" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-center" />
             </div>
             <div className="absolute -bottom-6 -right-3 bg-brand-gold p-6 text-brand-navy sm:-right-8 sm:p-8">
               <p className="font-serif text-4xl italic">Always</p>
