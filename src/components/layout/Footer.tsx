@@ -46,9 +46,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-5 border-t border-white/12 pt-6 text-[10px] uppercase tracking-[.16em] text-white/35 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-white/12 pt-6 text-[10px] uppercase tracking-[.16em] text-white/35">
           <p>© {new Date().getFullYear()} Mak Shield Insurance Limited · Licensed by IRA Kenya</p>
-          <div className="flex gap-6"><Link href="#">Privacy</Link><Link href="#">Terms</Link></div>
         </div>
       </div>
     </footer>
