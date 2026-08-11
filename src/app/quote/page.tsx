@@ -5,7 +5,7 @@ import QuoteForm from "@/features/contact/QuoteForm";
 
 export default function QuotePage() {
   return (
-    <div className="min-h-screen bg-brand-ivory pt-16 lg:pt-20">
+    <div className="min-h-screen bg-brand-ivory">
       <section className="relative overflow-hidden bg-brand-navy text-white">
         <div className="absolute inset-0 opacity-18">
           <Image src="/images/insurance2.png" alt="" fill priority sizes="100vw" className="object-cover" />

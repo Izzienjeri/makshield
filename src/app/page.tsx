@@ -75,7 +75,7 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden bg-brand-ivory text-brand-navy">
-      <section className="relative min-h-[90svh] overflow-hidden bg-brand-navy pt-16 text-white lg:min-h-[88svh] lg:pt-20">
+      <section className="relative min-h-[calc(90svh-4rem)] overflow-hidden bg-brand-navy text-white lg:min-h-[calc(88svh-5rem)]">
         <div className="absolute inset-0">
           <AnimatePresence mode="popLayout">
             <motion.div key={heroImages[heroIndex].src} initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ opacity: { duration: 1.2 }, scale: { duration: 7, ease: "linear" } }} className="absolute inset-0">

@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
+    <div className="flex flex-col min-h-screen font-sans bg-brand-white">
       
       {/* Small Hero */}
       <section className="inner-hero relative py-9 sm:py-14 lg:py-18 bg-brand-navy overflow-hidden">

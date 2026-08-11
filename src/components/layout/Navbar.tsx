@@ -24,10 +24,10 @@ export function Navbar() {
   useEffect(() => closeMobileMenu(), [pathname, closeMobileMenu]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-brand-navy/10 bg-brand-sand/96 text-brand-navy backdrop-blur-xl">
+    <header className="sticky inset-x-0 top-0 z-50 border-b border-brand-navy/10 bg-brand-sand text-brand-navy">
       <div className="site-container flex h-16 items-center justify-between lg:h-20">
         <Link href="/" className="relative z-50 flex h-16 w-16 items-center justify-center overflow-hidden lg:h-20 lg:w-20" aria-label="Mak Shield home">
-          <Image src={isMobileMenuOpen ? "/images/grey&white.png" : "/images/blue&grey.png"} alt="Mak Shield Insurance" width={284} height={284} priority className="h-[95%] w-[95%] object-contain" />
+          <Image src="/images/blue&grey.png" alt="Mak Shield Insurance" width={284} height={284} priority className="h-[95%] w-[95%] object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -45,7 +45,7 @@ export function Navbar() {
           </Link>
         </nav>
 
-        <button onClick={toggleMobileMenu} className={cn("group relative z-50 grid h-11 w-11 place-items-center overflow-hidden border border-brand-navy/20 lg:hidden", isMobileMenuOpen && "border-white/20 text-white")} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMobileMenuOpen}>
+        <button onClick={toggleMobileMenu} className={cn("group relative z-50 grid h-11 w-11 place-items-center overflow-hidden border border-brand-navy/20 lg:hidden", isMobileMenuOpen && "border-brand-navy/40")} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMobileMenuOpen}>
           <span className="relative block h-5 w-7" aria-hidden="true">
             <motion.span
               className="absolute right-0 top-0.5 block h-px bg-current"
@@ -68,16 +68,26 @@ export function Navbar() {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: .35 }} className="fixed inset-0 z-40 min-h-svh bg-brand-navy px-4 pb-6 pt-24 text-white">
-            <nav className="flex flex-col border-t border-white/15">
-              {links.map((link, index) => (
-                <Link key={link.href} href={link.href} className="flex items-center justify-between border-b border-white/15 py-4 text-2xl font-medium tracking-tight">
-                  {link.name}<span className="font-mono text-[10px] text-brand-gold">0{index + 1}</span>
-                </Link>
-              ))}
-            </nav>
-            <Link href="/quote" className="button-gold mt-6 w-full">Get a quote <ArrowUpRight className="h-4 w-4" /></Link>
-            <p className="eyebrow absolute bottom-6 text-white/35">Nairobi · Kenya · East Africa</p>
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ height: { duration: .42, ease: [0.16, 1, 0.3, 1] }, opacity: { duration: .22 } }}
+            className="overflow-hidden bg-brand-navy text-white lg:hidden"
+          >
+            <motion.div initial={{ y: -16 }} animate={{ y: 0 }} exit={{ y: -10 }} transition={{ duration: .36, ease: [0.16, 1, 0.3, 1] }} className="site-container py-3">
+              <nav className="flex flex-col border-t border-white/15">
+                {links.map((link, index) => (
+                  <Link key={link.href} href={link.href} className={cn("flex items-center justify-between border-b border-white/15 py-2.5 text-base font-medium tracking-tight transition-colors hover:text-brand-gold", pathname === link.href && "text-brand-gold")}>
+                    {link.name}<span className="font-mono text-[10px] text-brand-gold">0{index + 1}</span>
+                  </Link>
+                ))}
+              </nav>
+              <div className="mt-3 flex items-center gap-4 pb-1">
+                <Link href="/quote" className="button-gold grow">Get a quote <ArrowUpRight className="h-4 w-4" /></Link>
+                <span className="text-right text-[8px] uppercase leading-4 tracking-[.14em] text-white/35">Nairobi<br />Kenya</span>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

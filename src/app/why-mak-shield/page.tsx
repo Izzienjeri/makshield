@@ -15,7 +15,7 @@ const reasons = [
 
 export default function WhyMakShieldPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
+    <div className="flex flex-col min-h-screen font-sans bg-brand-white">
       
       {/* Hero Section */}
       <section className="inner-hero relative h-[46vh] min-h-[360px] sm:h-[52vh] sm:min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
