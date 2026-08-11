@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen pt-24 font-sans bg-brand-white">
       
       {/* Small Hero */}
-      <section className="relative py-24 bg-brand-navy overflow-hidden">
+      <section className="relative py-16 lg:py-20 bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="https://placehold.co/1920x600/0F1A2A/B28F4B?text=Contact+Us" alt="Contact Mak Shield" fill className="object-cover opacity-20" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent"></div>
@@ -28,7 +28,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32 bg-brand-grey-light relative">
+      <section className="py-14 lg:py-20 bg-brand-grey-light relative">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             

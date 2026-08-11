@@ -68,7 +68,7 @@
   }
 
   .section-space {
-    padding-block: clamp(5.5rem, 10vw, 9rem);
+    padding-block: clamp(3.75rem, 6vw, 6.5rem);
   }
 
   .eyebrow {

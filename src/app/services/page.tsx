@@ -94,10 +94,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-24 lg:py-32 bg-brand-white relative">
+      <section className="py-16 lg:py-20 bg-brand-white relative">
         <div className="container mx-auto px-6 lg:px-12">
           
-          <div className="max-w-3xl mb-20">
+          <div className="max-w-3xl mb-12">
             <FadeIn>
               <h2 className="text-3xl md:text-5xl font-bold text-brand-navy tracking-tighter mb-6">
                 Rooted in reality. <br/>
@@ -109,7 +109,7 @@ export default function ServicesPage() {
             </FadeIn>
           </div>
 
-          <div className="space-y-24 lg:space-y-36">
+          <div className="space-y-16 lg:space-y-20">
             {services.map((service, index) => (
               <div key={service.id} id={service.id} className="scroll-mt-32">
                 <FadeIn delay={0.1}>

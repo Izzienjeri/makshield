@@ -37,10 +37,10 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* The Differentiators Grid */}
-      <section className="py-24 lg:py-32 bg-brand-white">
+      <section className="py-16 lg:py-20 bg-brand-white">
         <div className="container mx-auto px-6 lg:px-12">
           <FadeIn>
-            <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-bold text-brand-navy tracking-tighter mb-6">
                 Professionals who prioritize the client over the commission.
               </h2>
@@ -67,7 +67,7 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* Our Reach */}
-      <section className="py-24 bg-brand-navy text-white relative overflow-hidden">
+      <section className="py-16 lg:py-20 bg-brand-navy text-white relative overflow-hidden">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-brand-accent/10 blur-[120px] rounded-full -translate-y-1/2"></div>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -100,7 +100,7 @@ export default function WhyMakShieldPage() {
       </section>
 
       {/* Our Promise */}
-      <section className="py-24 lg:py-36 bg-brand-grey-light">
+      <section className="py-16 lg:py-20 bg-brand-grey-light">
         <div className="container mx-auto px-6 lg:px-12 text-center max-w-4xl">
           <FadeIn>
             <Shield className="w-16 h-16 text-brand-accent mx-auto mb-8" />
