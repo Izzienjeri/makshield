@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useUIStore } from "@/store/useUIStore";
 import { cn } from "@/lib/utils";
@@ -45,8 +45,24 @@ export function Navbar() {
           </Link>
         </nav>
 
-        <button onClick={toggleMobileMenu} className={cn("relative z-50 grid h-11 w-11 place-items-center border border-brand-navy/20 lg:hidden", isMobileMenuOpen && "border-white/20 text-white")} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMobileMenuOpen}>
-          {isMobileMenuOpen ? <X /> : <Menu />}
+        <button onClick={toggleMobileMenu} className={cn("group relative z-50 grid h-11 w-11 place-items-center overflow-hidden border border-brand-navy/20 lg:hidden", isMobileMenuOpen && "border-white/20 text-white")} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMobileMenuOpen}>
+          <span className="relative block h-5 w-7" aria-hidden="true">
+            <motion.span
+              className="absolute right-0 top-0.5 block h-px bg-current"
+              animate={isMobileMenuOpen ? { width: 24, y: 8, rotate: 45 } : { width: 28, y: 0, rotate: 0 }}
+              transition={{ duration: .35, ease: [0.16, 1, 0.3, 1] }}
+            />
+            <motion.span
+              className="absolute right-0 top-[9px] block h-px bg-current"
+              animate={isMobileMenuOpen ? { width: 0, opacity: 0, x: 8 } : { width: 18, opacity: 1, x: 0 }}
+              transition={{ duration: .25, ease: [0.16, 1, 0.3, 1] }}
+            />
+            <motion.span
+              className="absolute right-0 top-[17px] block h-px bg-current"
+              animate={isMobileMenuOpen ? { width: 24, y: -8, rotate: -45 } : { width: 23, y: 0, rotate: 0 }}
+              transition={{ duration: .35, ease: [0.16, 1, 0.3, 1] }}
+            />
+          </span>
         </button>
       </div>
 
