@@ -21,7 +21,7 @@ export function Footer() {
             <p className="text-brand-grey-light/80 text-base leading-relaxed">
               Independent insurance brokerage and risk advisory firm. Protecting lives, businesses, and investments across borders with clarity and integrity.
             </p>
-            <p className="text-base font-serif italic font-light text-brand-grey">&ldquo;Your Risk. Our Resolve.&rdquo;</p>
+            <p className="text-base font-serif italic font-light text-brand-grey">&ldquo;Your Rizsk. Our Resolve.&rdquo;</p>
           </div>
 
           <div>
