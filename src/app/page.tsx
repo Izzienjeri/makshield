@@ -75,7 +75,7 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden bg-brand-ivory text-brand-navy">
-      <section className="relative min-h-svh overflow-hidden bg-brand-navy pt-20 text-white lg:pt-24">
+      <section className="relative min-h-svh overflow-hidden bg-brand-navy pt-16 text-white lg:pt-20">
         <div className="absolute inset-0">
           <AnimatePresence mode="popLayout">
             <motion.div key={heroImages[heroIndex].src} initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ opacity: { duration: 1.2 }, scale: { duration: 7, ease: "linear" } }} className="absolute inset-0">
@@ -86,7 +86,7 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#071421] to-transparent" />
         </div>
 
-        <div className="site-container relative z-10 flex min-h-[calc(100svh-5rem)] flex-col justify-between pb-7 pt-10 lg:min-h-[calc(100svh-6rem)] lg:pb-8 lg:pt-12">
+        <div className="site-container relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-between pb-7 pt-10 lg:min-h-[calc(100svh-5rem)] lg:pb-8 lg:pt-12">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .4 }} className="flex items-center gap-3">
             <span className="h-px w-10 bg-brand-gold" />
             <span className="eyebrow text-brand-gold">Independent · Client-first · Kenya</span>
@@ -131,7 +131,7 @@ export default function Home() {
               { icon: Building2, title: "Business & assets", href: "/services#risk-advisory" },
               { icon: HeartPulse, title: "Employees & benefits", href: "/services#employee-benefits" },
             ].map((path) => (
-              <Link key={path.title} href={path.href} className="group flex items-center justify-between gap-4 border-b border-brand-navy/12 px-0 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:px-6 sm:last:border-r-0">
+              <Link key={path.title} href={path.href} className="group flex items-center justify-between gap-4 border-b border-brand-navy/12 px-0 py-5 transition-colors hover:bg-brand-sand/50 last:border-b-0 sm:border-b-0 sm:border-r sm:px-6 sm:last:border-r-0">
                 <span className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-full bg-brand-navy/6"><path.icon className="h-4 w-4" strokeWidth={1.6} /></span><span className="text-sm font-semibold">{path.title}</span></span>
                 <ArrowUpRight className="h-4 w-4 text-brand-copper transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
@@ -212,7 +212,7 @@ export default function Home() {
         <div className="site-container grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
           <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .9, ease }} className="relative lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden">
-              <Image src="/images/claim2.png" alt="A Mak Shield advisor supporting a client" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-center" />
+              <Image src="/images/client-support-editorial.png" alt="A Mak Shield advisor supporting a client through an important decision" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-center" />
             </div>
             <div className="absolute -bottom-6 -right-3 bg-brand-gold p-6 text-brand-navy sm:-right-8 sm:p-8">
               <p className="font-serif text-4xl italic">Always</p>

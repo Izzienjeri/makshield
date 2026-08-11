@@ -7,10 +7,10 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-24 font-sans bg-brand-white">
+    <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
       
       {/* Small Hero */}
-      <section className="relative py-16 lg:py-20 bg-brand-navy overflow-hidden">
+      <section className="inner-hero relative py-14 lg:py-18 bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/hero18-hd.png" alt="Speak with Mak Shield" fill className="object-cover object-top opacity-25" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent"></div>

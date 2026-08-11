@@ -16,10 +16,10 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-24 font-sans bg-brand-white">
+    <div className="flex flex-col min-h-screen pt-20 font-sans bg-brand-white">
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center bg-brand-navy overflow-hidden">
+      <section className="inner-hero relative h-[52vh] min-h-[440px] flex items-center bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/storyhero.png" alt="About Mak Shield" fill className="object-cover opacity-30" priority />
 
