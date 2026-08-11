@@ -23,6 +23,7 @@ export function Footer() {
                 <Link href="/services" className="hover:text-brand-gold">Services</Link>
                 <Link href="/why-mak-shield" className="hover:text-brand-gold">Why Mak Shield</Link>
                 <Link href="/contact" className="hover:text-brand-gold">Contact</Link>
+                <Link href="/quote" className="hover:text-brand-gold">Get a quote</Link>
               </div>
             </div>
             <div>

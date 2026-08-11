@@ -40,7 +40,7 @@ export function Navbar() {
               </Link>
             );
           })}
-          <Link href="/contact" className="ml-3 inline-flex h-10 items-center gap-3 bg-brand-gold px-5 text-[10px] font-bold uppercase tracking-[.15em] text-brand-navy transition hover:bg-white">
+          <Link href="/quote" className="ml-3 inline-flex h-10 items-center gap-3 bg-brand-gold px-5 text-[10px] font-bold uppercase tracking-[.15em] text-brand-navy transition hover:bg-white">
             Get a quote <ArrowUpRight className="h-4 w-4" />
           </Link>
         </nav>
@@ -60,7 +60,7 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
-            <Link href="/contact" className="button-gold mt-8 w-full">Talk to an advisor <ArrowUpRight className="h-4 w-4" /></Link>
+            <Link href="/quote" className="button-gold mt-8 w-full">Get a quote <ArrowUpRight className="h-4 w-4" /></Link>
             <p className="eyebrow absolute bottom-8 text-white/35">Nairobi · Kenya · East Africa</p>
           </motion.div>
         )}
