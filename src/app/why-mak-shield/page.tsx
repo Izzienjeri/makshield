@@ -20,13 +20,13 @@ export default function WhyMakShieldPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="https://placehold.co/1920x1080/0F1A2A/B28F4B?text=Why+Mak+Shield" alt="Why Choose Mak Shield" fill className="object-cover opacity-30" priority />
+          <Image src="/images/hero16-hd.png" alt="Why choose Mak Shield" fill className="object-cover object-top opacity-30" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"></div>
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12">
           <FadeIn>
-            <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
               Why <span className="font-serif italic text-brand-accent font-light">Mak Shield.</span>
             </h1>
             <p className="text-brand-grey-light/80 max-w-2xl text-lg font-light leading-relaxed">
@@ -53,7 +53,7 @@ export default function WhyMakShieldPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reasons.map((reason, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="bg-white p-10 border border-brand-grey-light shadow-soft rounded-sm h-full group hover:shadow-float transition-all duration-500">
+                <div className="bg-white p-8 border-t-2 border-brand-navy h-full group transition-colors duration-500 hover:bg-brand-ivory">
                   <div className="w-14 h-14 bg-brand-navy/5 rounded-full flex items-center justify-center text-brand-navy mb-6 group-hover:bg-brand-navy group-hover:text-brand-accent transition-colors duration-500">
                     {reason.icon}
                   </div>
@@ -73,7 +73,7 @@ export default function WhyMakShieldPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
-                <Image src="https://placehold.co/1000x800/1A2E4B/B28F4B?text=Global+Reach" alt="Our Reach" fill className="object-cover" />
+                <Image src="/images/risk2.png" alt="Mak Shield support across borders" fill className="object-cover" />
               </div>
             </FadeIn>
             

@@ -25,9 +25,9 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-brand-navy/95 text-white backdrop-blur-xl">
-      <div className="site-container flex h-24 items-center justify-between lg:h-28">
+      <div className="site-container flex h-20 items-center justify-between lg:h-24">
         <Link href="/" className="relative z-50 flex items-center gap-3" aria-label="Mak Shield home">
-          <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} priority className="h-16 w-16 object-contain lg:h-20 lg:w-20" />
+          <Image src="/images/grey&white.png" alt="Mak Shield Insurance" width={284} height={284} priority className="h-14 w-14 object-contain lg:h-16 lg:w-16" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -40,7 +40,7 @@ export function Navbar() {
               </Link>
             );
           })}
-          <Link href="/contact" className="ml-3 inline-flex h-12 items-center gap-3 bg-brand-gold px-6 text-[11px] font-bold uppercase tracking-[.15em] text-brand-navy transition hover:bg-white">
+          <Link href="/contact" className="ml-3 inline-flex h-10 items-center gap-3 bg-brand-gold px-5 text-[10px] font-bold uppercase tracking-[.15em] text-brand-navy transition hover:bg-white">
             Get a quote <ArrowUpRight className="h-4 w-4" />
           </Link>
         </nav>

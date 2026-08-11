@@ -39,7 +39,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-10 rounded-xl shadow-float border border-brand-grey-light/70">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-6 md:p-8 border border-brand-grey-light shadow-soft">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-2">
           <label htmlFor="name" className="block text-sm font-medium text-brand-navy">Full Name</label>

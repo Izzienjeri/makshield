@@ -83,7 +83,7 @@ export default function ServicesPage() {
               <Briefcase className="w-4 h-4 text-brand-accent" />
               <span className="text-white text-[10px] uppercase tracking-[0.2em] font-semibold">Expertise</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
               Our Core <span className="font-serif italic text-brand-accent font-light">Services.</span>
             </h1>
             <p className="text-brand-grey-light/80 max-w-2xl text-lg font-light leading-relaxed">
@@ -115,17 +115,14 @@ export default function ServicesPage() {
                 <FadeIn delay={0.1}>
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                     
-                    {/* Asymmetrical Image Container */}
                     <div className={cn(
                       "lg:col-span-5 relative w-full aspect-[5/4] max-w-[550px] mx-auto flex items-center justify-center",
                       index % 2 === 1 ? "lg:order-last" : ""
                     )}>
-                      {/* Glow effect behind the image */}
                       <div 
                         className="absolute inset-0 bg-brand-accent/20 blur-[80px] transform scale-90 -z-10"
                         style={{ borderRadius: index % 2 === 0 ? '32px 96px 32px 96px' : '96px 32px 96px 32px' }}
                       ></div>
-                      
                       <div 
                         className="relative w-full h-full overflow-hidden shadow-float border-[8px] border-white bg-brand-grey-light/50"
                         style={{ borderRadius: index % 2 === 0 ? '32px 96px 32px 96px' : '96px 32px 96px 32px' }}
@@ -141,21 +138,20 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Text & Features Card */}
                     <div className={cn(
-                      "lg:col-span-7 bg-brand-grey-light/30 p-8 md:p-12 border border-brand-grey-light shadow-soft rounded-sm hover:shadow-float transition-all duration-500",
+                      "lg:col-span-7 bg-brand-grey-light/30 p-7 md:p-10 border border-brand-grey-light shadow-soft rounded-sm hover:shadow-float transition-all duration-500",
                       index % 2 === 1 ? "lg:order-first" : ""
                     )}>
-                      <div className="flex flex-col items-start mb-10">
-                        <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center mb-6 shadow-md">
+                      <div className="flex flex-col items-start mb-8">
+                        <div className="w-14 h-14 bg-brand-navy rounded-full flex items-center justify-center mb-5 shadow-md">
                           {service.icon}
                         </div>
                         <h3 className="text-3xl font-bold text-brand-navy tracking-tighter mb-4">{service.title}</h3>
                         <p className="text-brand-grey leading-relaxed text-lg">{service.description}</p>
                       </div>
 
-                      <div className="pt-8 border-t border-brand-grey/20">
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                      <div className="pt-6 border-t border-brand-grey/20">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-4">
                           {service.features.map((feature, fIdx) => (
                             <li key={fIdx} className="flex items-start gap-4">
                               <div className="mt-1 w-5 h-5 rounded-full bg-brand-accent/10 flex items-center justify-center shrink-0">

@@ -31,7 +31,7 @@ export default function AboutPage() {
               <ShieldCheck className="w-4 h-4 text-brand-accent" />
               <span className="text-white text-[10px] uppercase tracking-[0.2em] font-semibold">Corporate Profile</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
               Our <span className="font-serif italic text-brand-accent font-light">Story.</span>
             </h1>
             <p className="text-brand-grey-light/80 max-w-2xl text-lg font-light leading-relaxed">

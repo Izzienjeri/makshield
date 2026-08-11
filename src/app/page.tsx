@@ -9,6 +9,9 @@ import {
   ArrowUpRight,
   Check,
   ChevronRight,
+  Building2,
+  HeartPulse,
+  Home as HomeIcon,
   Handshake,
   Scale,
   ShieldCheck,
@@ -72,7 +75,7 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden bg-brand-ivory text-brand-navy">
-      <section className="relative min-h-svh overflow-hidden bg-brand-navy pt-24 text-white lg:pt-28">
+      <section className="relative min-h-svh overflow-hidden bg-brand-navy pt-20 text-white lg:pt-24">
         <div className="absolute inset-0">
           <AnimatePresence mode="popLayout">
             <motion.div key={heroImages[heroIndex].src} initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ opacity: { duration: 1.2 }, scale: { duration: 7, ease: "linear" } }} className="absolute inset-0">
@@ -83,17 +86,17 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#071421] to-transparent" />
         </div>
 
-        <div className="site-container relative z-10 flex min-h-[calc(100svh-6rem)] flex-col justify-between pb-7 pt-12 lg:min-h-[calc(100svh-7rem)] lg:pb-9 lg:pt-16">
+        <div className="site-container relative z-10 flex min-h-[calc(100svh-5rem)] flex-col justify-between pb-7 pt-10 lg:min-h-[calc(100svh-6rem)] lg:pb-8 lg:pt-12">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .4 }} className="flex items-center gap-3">
             <span className="h-px w-10 bg-brand-gold" />
             <span className="eyebrow text-brand-gold">Independent · Client-first · Kenya</span>
           </motion.div>
 
           <div className="max-w-[62rem]">
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .25, duration: .8, ease }} className="mb-5 font-serif text-xl italic text-white/70 md:text-2xl">
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .25, duration: .8, ease }} className="mb-4 font-serif text-lg italic text-white/70 md:text-xl">
               When certainty matters most
             </motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 38 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease }} className="text-[clamp(4rem,9vw,8.7rem)] font-medium leading-[.8] tracking-[-.072em]">
+            <motion.h1 initial={{ opacity: 0, y: 38 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease }} className="text-[clamp(3.5rem,7.5vw,7rem)] font-medium leading-[.82] tracking-[-.065em]">
               Your risk.<br /><span className="font-serif font-normal italic text-brand-gold">Our resolve.</span>
             </motion.h1>
             <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .4, duration: .8, ease }} className="mt-7 flex max-w-3xl flex-col gap-6 md:flex-row md:items-center">
@@ -113,6 +116,26 @@ export default function Home() {
             </div>
             <div><p className="text-2xl font-medium text-brand-gold">Global</p><p className="mt-1 text-[9px] uppercase tracking-[.16em] text-white/45">market access</p></div>
             <div><p className="text-2xl font-medium text-brand-gold">End-to-end</p><p className="mt-1 text-[9px] uppercase tracking-[.16em] text-white/45">claims advocacy</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-brand-navy/12 bg-white">
+        <div className="site-container grid lg:grid-cols-[.8fr_2.2fr]">
+          <div className="flex items-center border-b border-brand-navy/12 py-6 lg:border-b-0 lg:border-r lg:pr-8">
+            <div><p className="eyebrow text-brand-copper">Find your starting point</p><h2 className="mt-2 text-xl font-semibold tracking-tight">What are you protecting?</h2></div>
+          </div>
+          <div className="grid sm:grid-cols-3">
+            {[
+              { icon: HomeIcon, title: "Personal & family", href: "/services#corporate" },
+              { icon: Building2, title: "Business & assets", href: "/services#risk-advisory" },
+              { icon: HeartPulse, title: "Employees & benefits", href: "/services#employee-benefits" },
+            ].map((path) => (
+              <Link key={path.title} href={path.href} className="group flex items-center justify-between gap-4 border-b border-brand-navy/12 px-0 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:px-6 sm:last:border-r-0">
+                <span className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-full bg-brand-navy/6"><path.icon className="h-4 w-4" strokeWidth={1.6} /></span><span className="text-sm font-semibold">{path.title}</span></span>
+                <ArrowUpRight className="h-4 w-4 text-brand-copper transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -167,15 +190,15 @@ export default function Home() {
 
           <div className="grid gap-px bg-white/12 lg:grid-cols-2">
             {services.map((service) => (
-              <Link key={service.title} href={service.href} className="group relative min-h-82 overflow-hidden bg-brand-navy p-7 sm:p-9">
+              <Link key={service.title} href={service.href} className="group relative min-h-72 overflow-hidden bg-brand-navy p-6 sm:p-8">
                 <Image src={service.image} alt="" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-0 transition duration-700 group-hover:scale-105 group-hover:opacity-25" />
-                <div className="relative z-10 flex h-full min-h-68 flex-col">
+                <div className="relative z-10 flex h-full min-h-58 flex-col">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-brand-gold">{service.number}</span>
                     <span className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy"><ArrowUpRight className="h-4 w-4" /></span>
                   </div>
                   <div className="mt-auto">
-                    <h3 className="text-3xl font-medium tracking-[-.035em] sm:text-4xl">{service.title}</h3>
+                    <h3 className="text-2xl font-medium tracking-[-.035em] sm:text-3xl">{service.title}</h3>
                     <p className="mt-4 max-w-md leading-7 text-white/60">{service.copy}</p>
                   </div>
                 </div>
@@ -189,7 +212,7 @@ export default function Home() {
         <div className="site-container grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
           <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .9, ease }} className="relative lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden">
-              <Image src="/images/hero12.png" alt="Protection for families, businesses and futures" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+              <Image src="/images/hero12-hd.png" alt="Protection for families, businesses and futures" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-top" />
             </div>
             <div className="absolute -bottom-6 -right-3 bg-brand-gold p-6 text-brand-navy sm:-right-8 sm:p-8">
               <p className="font-serif text-4xl italic">Always</p>

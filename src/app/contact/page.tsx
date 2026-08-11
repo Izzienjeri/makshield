@@ -12,13 +12,13 @@ export default function ContactPage() {
       {/* Small Hero */}
       <section className="relative py-16 lg:py-20 bg-brand-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="https://placehold.co/1920x600/0F1A2A/B28F4B?text=Contact+Us" alt="Contact Mak Shield" fill className="object-cover opacity-20" priority />
+          <Image src="/images/hero18-hd.png" alt="Speak with Mak Shield" fill className="object-cover object-top opacity-25" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent"></div>
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12 text-center max-w-3xl">
           <FadeIn>
-            <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tighter mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-5">
               Initiate <span className="font-serif italic text-brand-accent font-light">Consultation.</span>
             </h1>
             <p className="text-brand-grey-light/80 text-lg font-light leading-relaxed">
