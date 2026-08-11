@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   },
   applicationName: "Mak Shield Insurance",
   category: "Insurance",
+  verification: {
+    google: "QKIVG6Ez7oTU8R1VYscb-q6cUJfxr7LWye_7tDcpsFQ",
+  },
   formatDetection: {
     email: false,
     address: false,
