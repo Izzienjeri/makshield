@@ -43,8 +43,6 @@ export default function QuoteForm() {
         return;
       }
 
-      const result = await response.json();
-      console.info("Quote request sent successfully", result.delivery);
       setIsSent(true);
     } catch {
       setSubmitError("We could not send your quote request. Please check your connection and try again.");

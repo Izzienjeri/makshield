@@ -211,7 +211,7 @@ export default function Home() {
       <section className="section-space bg-brand-sand">
         <div className="site-container grid items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-14">
           <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .9, ease }} className="relative lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="relative h-64 overflow-hidden md:h-72 lg:h-auto lg:aspect-[4/5]">
               <Image src="/images/client-support-editorial.png" alt="A Mak Shield advisor supporting a client through an important decision" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-center" />
             </div>
             <div className="absolute -bottom-6 -right-3 bg-brand-gold p-6 text-brand-navy sm:-right-8 sm:p-8">

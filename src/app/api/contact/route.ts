@@ -96,7 +96,7 @@ export async function POST(request: Request) {
     const from = requireEnv("CONTACT_FROM");
     const to = requireEnv("CONTACT_TO");
 
-    const delivery = await transporter.sendMail({
+    await transporter.sendMail({
       from: `Mak Shield Website <${from}>`,
       to,
       replyTo: submission.email,
@@ -105,22 +105,7 @@ export async function POST(request: Request) {
       html,
     });
 
-    console.info(`[contact-form] ${label} sent successfully`, {
-      from,
-      to,
-      replyTo: submission.email,
-      messageId: delivery.messageId,
-    });
-
-    return Response.json({
-      ok: true,
-      delivery: {
-        from,
-        to,
-        replyTo: submission.email,
-        messageId: delivery.messageId,
-      },
-    });
+    return Response.json({ ok: true });
   } catch (error) {
     console.error("Contact form delivery failed", error);
     return Response.json(
