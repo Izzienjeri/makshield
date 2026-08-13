@@ -50,7 +50,7 @@ export default function ContactForm() {
       }
 
       const result = await response.json();
-      console.info("Contact inquiry sent successfully", { messageId: result.messageId });
+      console.info("Contact inquiry sent successfully", result.delivery);
       setIsSent(true);
     } catch {
       setSubmitError("We could not send your inquiry. Please check your connection and try again.");

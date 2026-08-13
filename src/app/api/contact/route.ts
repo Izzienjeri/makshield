@@ -93,9 +93,12 @@ export async function POST(request: Request) {
       .map(([key, value]) => `<p><strong>${escapeHtml(key)}:</strong><br>${escapeHtml(value).replace(/\n/g, "<br>")}</p>`)
       .join("");
 
+    const from = requireEnv("CONTACT_FROM");
+    const to = requireEnv("CONTACT_TO");
+
     const delivery = await transporter.sendMail({
-      from: `Mak Shield Website <${requireEnv("CONTACT_FROM")}>`,
-      to: requireEnv("CONTACT_TO"),
+      from: `Mak Shield Website <${from}>`,
+      to,
       replyTo: submission.email,
       subject: `${label} from ${submission.name}`,
       text,
@@ -103,10 +106,21 @@ export async function POST(request: Request) {
     });
 
     console.info(`[contact-form] ${label} sent successfully`, {
+      from,
+      to,
+      replyTo: submission.email,
       messageId: delivery.messageId,
     });
 
-    return Response.json({ ok: true, messageId: delivery.messageId });
+    return Response.json({
+      ok: true,
+      delivery: {
+        from,
+        to,
+        replyTo: submission.email,
+        messageId: delivery.messageId,
+      },
+    });
   } catch (error) {
     console.error("Contact form delivery failed", error);
     return Response.json(
