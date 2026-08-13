@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { ArrowRight, Check, CircleCheck, Loader2 } from "lucide-react";
 
 const coverOptions = [
   "Personal or family cover",
@@ -13,14 +13,55 @@ const coverOptions = [
 
 export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   async function submitQuote(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setIsSubmitting(false);
-    event.currentTarget.reset();
-    alert("Thank you. A Mak Shield advisor will contact you shortly.");
+    setSubmitError("");
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          kind: "quote",
+          name: formData.get("name"),
+          phone: formData.get("phone"),
+          email: formData.get("email"),
+          cover: formData.get("cover"),
+          details: formData.get("details"),
+        }),
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        setSubmitError(result?.error ?? "We could not send your quote request. Please try again.");
+        return;
+      }
+
+      const result = await response.json();
+      console.info("Quote request sent successfully", { messageId: result.messageId });
+      setIsSent(true);
+    } catch {
+      setSubmitError("We could not send your quote request. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  if (isSent) {
+    return (
+      <div role="status" className="flex min-h-[520px] flex-col items-center justify-center bg-white p-8 text-center shadow-[0_30px_80px_-35px_rgba(15,26,42,.35)] sm:p-10">
+        <CircleCheck className="h-14 w-14 text-brand-gold" aria-hidden="true" />
+        <p className="eyebrow mt-6 text-brand-copper">Request sent</p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-brand-navy">Thank you.</h2>
+        <p className="mt-4 max-w-md leading-7 text-brand-grey">Your quote request has been delivered. A Mak Shield advisor will contact you shortly.</p>
+      </div>
+    );
   }
 
   return (
@@ -69,6 +110,7 @@ export default function QuoteForm() {
       <button disabled={isSubmitting} type="submit" className="mt-6 flex h-12 w-full items-center justify-center gap-3 bg-brand-gold text-xs font-bold uppercase tracking-[.15em] text-brand-navy transition hover:bg-brand-navy hover:text-white disabled:opacity-60">
         {isSubmitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <>Request my quote <ArrowRight className="h-4 w-4" /></>}
       </button>
+      {submitError && <p role="alert" className="mt-4 text-center text-sm text-red-600">{submitError}</p>}
       <p className="mt-4 text-center text-xs leading-5 text-brand-grey">No obligation. Your information is handled privately.</p>
     </form>
   );

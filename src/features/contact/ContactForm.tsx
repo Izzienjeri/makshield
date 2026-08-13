@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -7,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
-import { Loader2, ArrowRight } from "lucide-react";
+import { Loader2, ArrowRight, CircleCheck } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Full Name is required"),
@@ -21,22 +22,51 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
+  const [isSent, setIsSent] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
     setValue,
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(data);
-    reset();
-    alert("Thank you! Your inquiry has been submitted successfully. Our team will contact you shortly.");
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ kind: "contact", ...data }),
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        setSubmitError(result?.error ?? "We could not send your inquiry. Please try again.");
+        return;
+      }
+
+      const result = await response.json();
+      console.info("Contact inquiry sent successfully", { messageId: result.messageId });
+      setIsSent(true);
+    } catch {
+      setSubmitError("We could not send your inquiry. Please check your connection and try again.");
+    }
   };
+
+  if (isSent) {
+    return (
+      <div role="status" className="flex min-h-[420px] flex-col items-center justify-center border border-brand-navy/10 border-t-4 border-t-brand-gold bg-white p-8 text-center shadow-soft">
+        <CircleCheck className="h-14 w-14 text-brand-gold" aria-hidden="true" />
+        <p className="eyebrow mt-6 text-brand-copper">Message sent</p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-brand-navy">Thank you for contacting us.</h2>
+        <p className="mt-4 max-w-md leading-7 text-brand-grey">Your inquiry has been delivered. A Mak Shield advisor will contact you shortly.</p>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 bg-white p-5 sm:p-6 md:p-8 border border-brand-navy/10 border-t-4 border-t-brand-navy shadow-soft">
@@ -130,6 +160,7 @@ export default function ContactForm() {
           </span>
         )}
       </Button>
+      {submitError && <p role="alert" className="text-sm text-red-600">{submitError}</p>}
     </form>
   );
 }
